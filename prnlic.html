@@ -1,0 +1,3133 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0039)http://www.gaadiidka.in/PRA/licence.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Abdulla</title>
+    <meta name="viewport" content="width=device-width">
+    <link href="./Abdulla_files/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="./Abdulla_files/font-awesome.css" rel="stylesheet">
+    <link href="./Abdulla_files/font-awesome.min.css" rel="stylesheet" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <link href="./Abdulla_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Abdulla_files/bootstrap-theme.min.css">
+	<script src="./Abdulla_files/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./Abdulla_files/main.css">
+    <style>
+	.page_info { margin: 10px;}
+	.current{
+		color: #fff !important;
+		cursor: default !important;
+		background-color: #337ab7 !important;
+		border-color: #337ab7 !important;
+	 }
+	
+
+
+	</style>
+  </head>
+  <body>
+
+    <div class="fluid">
+      <header class="navbar-fixed-top">
+        <span class="logo">
+          <a href="http://www.gaadiidka.in/PRA/licence.php#">
+            <img src="./Abdulla_files/logo-flag.png">
+          </a>
+          <a href="http://www.gaadiidka.in/PRA/licence.php#">
+            <img src="./Abdulla_files/logo3.png">
+          </a>
+        </span>
+
+      </header>
+           <div id="leftWrapper">
+        <div id="listView" class="list">
+          <div class="toggler">
+            <div class="fa fa-navicon">
+            </div>
+          </div>
+                    <li>
+            <a href="http://www.gaadiidka.in/PRA/index.php">Receipts
+              <div class="fa fa-file-text-o">
+              </div>
+            </a>
+          </li>
+                    <li class="list-item-active">
+          	<a href="http://www.gaadiidka.in/PRA/licence.php">Licence
+            	<div class="fa fa-list-alt"></div>
+            </a>
+          </li>
+                    <li>
+            <a href="http://www.gaadiidka.in/PRA/vehicles.php">Vehicles
+              <div class="fa fa-car">
+              </div>
+            </a>
+          </li>
+                    <li>
+          	<a href="http://www.gaadiidka.in/PRA/vehicle_transfer.php">Vehicle Transfer<div class="fa fa-exchange"></div></a>
+          </li>
+          <li>
+          	<a href="http://www.gaadiidka.in/PRA/traffic.php">Traffic Fines<div class="fa fa-navicon"></div></a>
+          </li>
+                    <li>
+            <a href="http://www.gaadiidka.in/PRA/users.php">
+              <div class="fa fa-user">
+              </div>Users &amp; Masters
+            </a>
+          </li>
+                              <li>
+            <a href="http://www.gaadiidka.in/PRA/reports.php">
+              <div class="fa fa-laptop">
+              </div>Reports &amp; Statistics
+            </a>
+          </li>
+                    <li class="last-child">
+            <a href="http://www.gaadiidka.in/PRA/logout.php">
+              <div class="fa fa-power-off">
+              </div>Logout
+            </a>
+          </li>
+        </div>
+      </div>
+    <style>
+	#gallery img{ width:120px; height:160px;}
+	#pictures_2 img{ width:120px; height:160px;}
+	</style>
+    <div class="right-nav">
+      	<ul class="nav nav-tabs">
+            <li>
+            	<a href="http://www.gaadiidka.in/PRA/licence.php?is_licence=1">New Licence</a>
+            </li>
+            <li>
+            	<a href="http://www.gaadiidka.in/PRA/licence.php?edit_licence=1" id="ascsss">Edit-Renew</a>
+            </li>
+            <li><a data-toggle="tab" href="http://www.gaadiidka.in/PRA/licence.php#search-licence">Search Licence</a></li>
+            <li class="active"><a data-toggle="tab" href="http://www.gaadiidka.in/PRA/licence.php#card-list">Card List</a></li>
+            <li style="float: right;">
+                             <div class="alert alert-success" style="padding: 2px 2px 2px 15px; margin-top: 2px; margin-bottom: 0px; float: right; display: none;">New record has been added</div>
+                                          <div class="alert alert-danger" id="show_error_msg" style="padding: 2px 2px 2px 15px; margin-top: 2px; margin-bottom: 0px; display: none;"></div>
+              <div class="" id="show_print_btn" style="padding:2px;margin-top:2px;padding-left:15px;margin-bottom:0px;"></div>
+           </li>
+        </ul>
+        <div class="tab-content">
+                    	<div id="licence" class="tab-pane fade  fade">
+                <form method="post" action="http://www.gaadiidka.in/PRA/model/licence_model.php" enctype="multipart/form-data">
+                    <div class="form-inline" style="margin-bottom:20px;">
+                        <div class="form-group">
+                            <label for="text">Receipt No:</label><input id="text" onkeyup="get_receipt_data(this.value);" name="receipt_no" required="required" type="text" class="form-control">
+                        </div>
+                        <div class="form-group"><label for="date">Fees:</label><input id="text" name="fees" readonly="readonly" required="required" type="text" class="form-control licence_receipt_fee"></div>
+                        <div class="form-group"><label for="date">Holder's Name:</label><input id="text-long" readonly="" name="name" required="required" type="text" class="form-control licence_receipt_holder_name"></div>
+                    </div>
+                    <div class="form-inline" style="margin: 0 0 20px;">
+                        <div class="form-group"><label for="text">Licence No:</label><input id="text-short" name="licence_no" required="required" type="text" class="form-control licence_no" value="123"></div>
+                        <div class="form-group"><label for="date">Place of Issue:</label><input id="text-short" name="issue_place" type="text" class="form-control issue_place" value="Mogadishu"></div>
+                        <div class="form-group"><label for="date">Date of Issue:</label><input id="text-short" name="issue_date" onkeyup="Change_expire_date(this.value)" required="required" type="text" class="form-control licence_receipt_issueDate" placeholder="dd-mm-yy"></div>
+                        <div class="form-group"><label for="date">Expire Date:</label><input id="text-short" name="expiry_date" required="required" type="text" class="form-control expire_date" placeholder="dd-mm-yy"></div>
+                    </div>
+                    <script>
+					function Change_expire_date(val)
+					{
+
+						//alert($('.expiry_date').val());
+						var dateAr = val.split('-');
+						var newDate = dateAr[2] + '-' + dateAr[1] + '-' + dateAr[0];
+						var someDate = new Date(newDate);
+						//alert(someDate);
+						var numberOfDaysToAdd = 1095;
+						someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
+						if(!isNaN(someDate.getTime())){
+
+							//alert(someDate);
+							//alert(someDate.getDate());
+							var day = someDate.getDate();
+							var month = someDate.getMonth() + 1;
+							if (month < 10) {
+								month = "0" + month;
+							}
+							var year = someDate.getFullYear();
+							newDate = day + '-' + month + '-' + year;
+							$(".expire_date").val(newDate);
+						}
+						else
+							$(".expire_date").val('dd/mm/yy');
+
+
+					}
+
+					</script>
+                    <div class="stack">
+                        <div class="row">
+                            <div class="col" id="gallery">
+                            	<img src="./Abdulla_files/user-big.png">
+
+                            </div>
+
+                            <div class="col2">
+                                <div class="form-horizontal" style="margin: 0 0 20px;">
+                                    <div class="form-group">
+                                    	<label for="text" class="control-label2 col-sm-4">Gender:</label>
+                                        <div class="col-sm-4">
+                                        	<select id="text-middle" size="1" name="gender">
+                                            	<option value="1">Lab</option>
+                                                <option value="2">Dhedig</option>
+                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="text" class="control-label2 col-sm-4">Mother's Name:</label>
+                                    <div class="col-sm-4"><input id="text-middle" type="text" name="mother_name" class="form-control"></div>
+                                    </div>
+                                    <div class="form-group">
+                                    	<label for="text" class="control-label2 col-sm-4">Date of Birth:</label>
+                                    	<div class="col-sm-4"><input id="text-middle" type="text" name="birth_date" required="required" class="form-control"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="text" class="control-label2 col-sm-4">Place of Birth:</label>
+                                        <div class="col-sm-4"><input id="text-middle" type="text" name="birth_place" class="form-control"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="text" class="control-label2 col-sm-4">Nationality:</label>
+                                        <div class="col-sm-4">
+                                        				   							<select id="text-middle" size="1" name="nationality">
+                                               <option value="">Select Country</option>
+                                                                                               	<option value="Britain">Britain</option>
+                                                                                               	<option value="Ethiopia">Ethiopia</option>
+                                                                                               	<option value="Kenya">Kenya</option>
+                                                                                               	<option value="Somalia">Somalia</option>
+                                                                                               	<option value="Yemen">Yemen</option>
+                                                                                               	<option value="Sweden">Sweden</option>
+                                                                                               	<option value="Saudi">Saudi</option>
+                                                                                               	<option value="Qatar">Qatar</option>
+                                                                                               	<option value="UAE">UAE</option>
+                                                                                               	<option value="India">India</option>
+                                                                                               	<option value="Japan">Japan</option>
+                                                                                               	<option value="South Korea">South Korea</option>
+                                                                                               	<option value="USA">USA</option>
+                                                                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col3">
+                                <div class="form-horizontal" style="margin: 0 0 20px;">
+                                     <div class="form-group" style="margin-bottom:10px;">
+                                        <label for="text" class="control-label2 col-sm-4">Residence Address:</label>
+                                        <div class="col-sm-4"><input id="text-long" type="text" name="address" required="" class="form-control"></div>
+                                     </div>
+                                     <div class="form-group" style="margin-bottom:10px;"><label for="text" class="control-label2 col-sm-4">Email Address:</label><div class="col-sm-4"><input id="text-long" type="text" name="email" class="form-control"></div></div>
+                                     <div class="form-group" style="margin-bottom:10px;"><label for="text" class="control-label2 col-sm-4">Contacts:</label><div class="col-sm-4"><input id="text-long" type="text" name="contact_no" required="required" class="form-control"></div></div>
+                                     <div class="form-group" style="margin-bottom:10px;"><label for="text" class="control-label2 col-sm-4">Personal ID:</label><div class="col-sm-4"><input id="text-long" type="text" name="personal_id" class="form-control"></div></div>
+                                     <div class="form-group" style="margin-bottom:10px;"><label for="text" class="control-label2 col-sm-4">Upload Picture:</label>
+                                         <div class="col-sm-4">
+                                         	<label for="fileinput" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-plus"> Upload</span></label>
+                 		   					<input id="fileinput" name="image" type="file" accept="image/*" required="" class="form-control inputfile" style="padding: 0px;">
+                                         </div>
+
+                                     </div>
+
+
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="form-inline" style="margin-bottom:20px;">
+                        <div class="table-responsive">Authorized vehicles:
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr><th><input id="check1" name="vehicle_types[]" value="A" type="checkbox"><label for="check1" class="for-check"><img src="./Abdulla_files/class-a.png"></label></th>
+                                    <th><input id="check2" name="vehicle_types[]" value="A1" type="checkbox"><label for="check2" class="for-check"><img src="./Abdulla_files/class-a1.png"></label></th>
+                                    <th><input id="check3" name="vehicle_types[]" value="B" type="checkbox"><label for="check3" class="for-check"><img src="./Abdulla_files/class-b.png"></label></th>
+                                    <th><input id="check4" name="vehicle_types[]" value="C" type="checkbox"><label for="check4" class="for-check"><img src="./Abdulla_files/class-c.png"></label></th>
+                                    <th><input id="check5" name="vehicle_types[]" value="C1" type="checkbox"><label for="check5" class="for-check"><img src="./Abdulla_files/class-c1.png"></label></th>
+                                    <th><input id="check6" name="vehicle_types[]" value="D" type="checkbox"><label for="check6" class="for-check"><img src="./Abdulla_files/class-d.png"></label></th>
+                                    <th><input id="check7" name="vehicle_types[]" value="E" type="checkbox"><label for="check7" class="for-check"><img src="./Abdulla_files/class-e.png"></label></th>
+                                    <th><input id="check8" name="vehicle_types[]" value="F" type="checkbox"><label for="check8" class="for-check"><img src="./Abdulla_files/class-f.png"></label></th>
+                                    <th><input id="check9" name="vehicle_types[]" value="G" type="checkbox"><label for="check9" class="for-check"><img src="./Abdulla_files/class-g.png"></label></th>
+                                    </tr>
+                                </thead>
+                                <tbody><tr><td>A</td><td>A1</td><td>B</td><td>C</td><td>C1</td><td>D</td><td>E</td><td>F</td><td>G</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="text" class="control-label2 col-sm-2">Comments:</label>
+                            <div class="col-sm-4">
+                                <input id="text-long" name="comments" type="text" class="form-control">
+                                <input type="submit" value="submit" style="display:none;" id="licence_submit_btn">
+                            </div>
+                            <div class="col4">
+                                <a href="javascript:void(0);" class="btn btn-lg btn-default" onclick="submit_form_btn()"><span class="glyphicon glyphicon-plus"> Add</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+					function submit_form_btn()
+					{
+						if($('.licence_receipt_fee').val() != '' &&  $('.licence_receipt_holder_name').val() != '')
+						{
+							$.ajax({
+								url: 'model/licence_model.php',
+								type:'POST',
+								data: 'action=licence_validation_check&licence_no='+$('.licence_no').val(),
+								beforeSend: function(){
+
+								},
+								success: function(result){
+									if(result == 'yes')
+									{
+										$('#show_error_msg').show().text('ERROR !  Licence number already exists.');
+										$('.licence_no').focus();
+
+									}
+									else
+									{
+										$('#licence_submit_btn').trigger('click');
+
+									}
+								}
+							});
+						}
+						else
+						    $('#show_error_msg').show().text('ERROR !  Some thing wrong, Please check receipt number again.');
+					}
+					</script>
+                </form>
+            </div>
+                                    <div id="edit-renew" class="tab-pane fade">
+            <form role="form" class="form-inline" id="search_licence_no" method="post">
+            <div class="form-group">
+            <label for="text">Licence No:</label>
+            <input id="text" type="text" name="licence_no" required="required" value="" class="form-control">
+            <input type="submit" value="sub" id="search_licn_sub_btn" style="display:none;">
+            <div class="fa-stack fa-lg">
+               <a href="javascript:void(0);" onclick="submit_search_form()">
+            	<i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-search fa-stack-1x"></i>
+               </a>
+            </div></div>
+            <script>
+			function submit_search_form()
+			{
+			    $('#search_licn_sub_btn').trigger('click');
+			}
+			</script>
+            </form>
+            <form method="post" action="http://www.gaadiidka.in/PRA/model/licence_model.php" enctype="multipart/form-data">
+                <div class="form-inline" style="margin-bottom:20px;">
+                    <div class="form-group">
+                        <label for="text">Place of Issue:</label>
+                        <input id="text-short" type="text" class="form-control" name="issue_place" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date of Issue:</label>
+                        <input id="text-short" type="text" class="form-control" name="issue_date" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Expire Date:</label>
+                        <input id="text-short" type="text" class="form-control" name="expiry_date" value="">
+                    </div>
+                </div>
+                <div class="stack">
+                    <div class="row">
+                        <div class="col" id="pictures_2">
+                                                            <img src="./Abdulla_files/user-big.png">
+                                                      <input id="text-middle" type="hidden" name="licence_user_prev_image" value="">
+                         </div>
+                        <div class="col5">
+                            <div class="form-horizontal" style="margin-bottom:20px;">
+                                <div class="form-group" style="margin-bottom:10px;">
+                                    <label for="text" class="control-label2 col-sm-4">Holder's Name:</label>
+                                    <div class="col-sm-4"><input id="text-middle" type="text" name="name" class="form-control" value=""></div>
+                                </div>
+                                <div class="form-group" style="margin-bottom:10px;">
+                                    <label for="text" class="control-label2 col-sm-4">Gender:</label>
+                                    <div class="col-sm-4">
+                                        <select id="text-middle" size="1" name="gender">
+                                            <option value="1">Lab</option>
+                                            <option value="2">Dhedig</option>
+                                        </select>
+                                     </div>
+                                </div>
+                                <div class="form-group" style="margin-bottom:10px;">
+                                    <label for="text" class="control-label2 col-sm-4">Mother's Name:</label>
+                                    <div class="col-sm-4">
+                                    <input id="text-middle" type="text" class="form-control" name="mother_name" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-bottom:10px;">
+                                    <label for="text" class="control-label2 col-sm-4">Date of Birth:</label>
+                                    <div class="col-sm-4"><input id="text-middle" type="text" name="birth_date" class="form-control" value=""></div>
+                                </div>
+                                <div class="form-group" style="margin-bottom:10px;">
+                                    <label for="text" class="control-label2 col-sm-4">Place of Birth:</label>
+                                    <div class="col-sm-4">
+                                    <input id="text-middle" type="text" class="form-control" name="birth_place" value=""></div>
+                                    </div>
+                                <div class="form-group" style="margin-bottom:10px;">
+                                    <label for="text" class="control-label2 col-sm-4">Nationality:</label>
+                                    <div class="col-sm-4">
+                                                                            <select id="text-middle" size="1" name="nationality">
+                                           <option value="">Select Country</option>
+                                                                                           <option value="Britain">Britain</option>
+                                                                                           <option value="Ethiopia">Ethiopia</option>
+                                                                                           <option value="Kenya">Kenya</option>
+                                                                                           <option value="Somalia">Somalia</option>
+                                                                                           <option value="Yemen">Yemen</option>
+                                                                                           <option value="Sweden">Sweden</option>
+                                                                                           <option value="Saudi">Saudi</option>
+                                                                                           <option value="Qatar">Qatar</option>
+                                                                                           <option value="UAE">UAE</option>
+                                                                                           <option value="India">India</option>
+                                                                                           <option value="Japan">Japan</option>
+                                                                                           <option value="South Korea">South Korea</option>
+                                                                                           <option value="USA">USA</option>
+                                                                                    </select>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col3">
+                            <div class="form-horizontal" style="margin-bottom:20px;">
+                                <div class="form-group" style="margin-bottom:10px;">
+                                    <label for="text" class="control-label2 col-sm-4">Residence Address:</label>
+                                    <div class="col-sm-4"><input id="text-long" type="text" name="address" required="required" class="form-control" value=""></div>
+                                </div>
+                                <div class="form-group" style="margin-bottom:10px;">
+                                    <label for="text" class="control-label2 col-sm-4">Email Address:</label>
+                                    <div class="col-sm-4"><input id="text-long" type="text" name="email" class="form-control" value=""></div>
+                                </div>
+                                <div class="form-group" style="margin-bottom:10px;">
+                                    <label for="text" class="control-label2 col-sm-4">Contacts:</label>
+                                    <div class="col-sm-4">
+                                    <input id="text-long" type="text" class="form-control" name="contact_no" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-bottom:10px;">
+                                    <label for="text" class="control-label2 col-sm-4">Personal ID:</label>
+                                    <div class="col-sm-4"><input id="text-long" type="text" name="personal_id" class="form-control" value=""></div>
+                                </div>
+                                <div class="form-group" style="margin-bottom:10px;"><label for="text" class="control-label2 col-sm-4">Upload Picture:</label>
+                                     <div class="col-sm-4">
+                                        <label for="licence_piture" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-plus"> Upload</span></label>
+                                        <input id="licence_piture" name="image" type="file" accept="image/*" class="form-control inputfile" style="padding: 0px;">
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-inline" style="margin-bottom:20px;">
+                    <div class="table-responsive">Authorized vehicles:
+                    <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                    <th>
+                    <input id="check10" name="vehicle_types[]" value="A" type="checkbox">
+                    <label for="check10" class="for-check"><img src="./Abdulla_files/class-a.png"></label>
+                    </th>
+                    <th><input id="check12" name="vehicle_types[]" value="A1" type="checkbox"><label for="check12" class="for-check"><img src="./Abdulla_files/class-a1.png"></label></th>
+                    <th><input id="check13" name="vehicle_types[]" value="B" type="checkbox"><label for="check13" class="for-check"><img src="./Abdulla_files/class-b.png"></label></th>
+                    <th><input id="check14" name="vehicle_types[]" value="C" type="checkbox"><label for="check14" class="for-check"><img src="./Abdulla_files/class-c.png"></label></th>
+                    <th><input id="check15" name="vehicle_types[]" value="C1" type="checkbox"><label for="check15" class="for-check"><img src="./Abdulla_files/class-c1.png"></label></th>
+                    <th><input id="check16" name="vehicle_types[]" value="D" type="checkbox"><label for="check16" class="for-check"><img src="./Abdulla_files/class-d.png"></label></th>
+                    <th><input id="check17" name="vehicle_types[]" value="E" type="checkbox"><label for="check17" class="for-check"><img src="./Abdulla_files/class-e.png"></label></th>
+                    <th><input id="check18" name="vehicle_types[]" value="F" type="checkbox"><label for="check18" class="for-check"><img src="./Abdulla_files/class-f.png"></label></th>
+                    <th><input id="check19" name="vehicle_types[]" value="G" type="checkbox"><label for="check19" class="for-check"><img src="./Abdulla_files/class-g.png"></label></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>A</td><td>A1</td><td>B</td><td>C</td><td>C1</td><td>D</td><td>E</td><td>F</td><td>G</td></tr></tbody>
+                    </table>
+                    </div>
+                </div>
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label for="text" class="control-label2 col-sm-2">Comments:</label>
+                        <div class="col-sm-4"><input id="text-long" type="text" name="comments" class="form-control" value=""></div>
+                        <div class="col4">
+                        <a href="javascript:void(0);" onclick="update_licence_form()" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-plus"> Save</span></a>
+                        <a href="http://www.gaadiidka.in/PRA/licence.php#" class="btn btn-lg pop btn-default"><span class="glyphicon glyphicon-refresh"> Renew</span></a>
+                        </div>
+                    </div>
+                    <input type="hidden" value="" name="update_licence">
+                    <input type="submit" value="sub" id="licence_update_sub_btn" style="display:none;">
+                </div>
+            </form>
+            <script>
+			function update_licence_form()
+			{
+				$('#licence_update_sub_btn').trigger('click');
+			}
+			</script>
+            <div class="overlay">
+                <div class="popup">
+                    <div class="closeBtn">
+                    	<div class="fa fa-close">
+                    </div></div>
+                    <p>Licence Renewal Table</p>
+                    <div class="alert alert-danger" id="licence_renew_error_msg" style="display:none;padding:2px;margin-top:2px;padding-left:15px;margin-bottom:0px;"></div>
+                    <div class="alert alert-success" id="licence_renew_success_msg" style="display:none;color:#144C15;padding:2px;margin-top:2px;padding-left:15px;margin-bottom:0px;"></div>
+                    <form role="form" class="form-inline">
+                        <div class="form-group">
+                        	<label type="text" style="padding-left: 0px" class="control-label col-sm-6">Licence No: </label>
+                        	<div class="col-sm-2">
+                            	<input id="text" type="text" class="form-control" readonly="readonly" value="">
+                            </div>
+                        	<br>
+                            <label type="text" style="padding-left: 0px" class="control-label col-sm-6">Holder's Name: </label>
+                            <div class="col-sm-2">
+                            	<input id="text" type="text" class="form-control" readonly="" value="">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="table-responsive">
+
+                    <table class="table table-bordered">
+                    <thead>
+                    <tr class="success">
+                    	<th class="small-font">Receipt No</th>
+                        <th class="small-font">Amount</th>
+                        <th class="small-font">Renewal Type</th>
+                        <th class="small-font">Renewal Date</th>
+                        <th class="small-font">Expire Date</th>
+                        <th class="small-font"></th>
+                        </tr><tr class="active">
+                           <form method="post" id="uploadForm" action="http://www.gaadiidka.in/PRA/model/licence_renewal_model.php"></form>
+                        	<td><input id="text" type="text" placeholder="10001" name="receipt_no" onkeyup="get_receipt_data_licence_renew(this.value);" required="required" class="form-control insider receipt_no"></td>
+                            <td><input id="text" type="text" placeholder="$50" name="amount" readonly="readonly" required="" class="form-control insider licence_renew_fee"></td>
+                            <td>
+                                <select id="text-short" size="1" name="renewal_type" required="" placeholder="Renew" style="padding:0;">
+                                    <option value="1">For Expire</option>
+                                    <option value="2">For Damage</option>
+                                    <option value="3">For Lost</option>
+                                </select>
+                            </td>
+                            <td><input id="text" type="text" placeholder="dd-mm-yy" name="renewal_date" onkeyup="Change_expire_date_licence_renewal(this.value)" required="" class="form-control insider licence_renew_issue_date" value="21-06-2016"></td>
+                            <td><input id="text" type="text" placeholder="dd-mm-yy" name="expire_date" required="" class="form-control insider licence_renew_expire_date" value="21-09-2016"></td>
+                            <td><a href="javascript:void(0);" onclick="submit_licence_renewal_form()" style="color: green" class="fa fa-save"></a>
+                            	<input type="hidden" name="licence_renewal_form_data" value="1">
+                                <input type="hidden" name="licence_renewal_licence_no" id="licence_renewal_licence_no" value="">
+                                <input type="submit" value="submit" id="sub_btn_licence_renewal" style="display:none;">
+                            </td>
+                           
+                        </tr>
+                    
+                    </thead>
+                    <tbody id="licence_renewal_data_area">
+
+                      
+                      </tbody>
+                    </table>
+                    </div>
+               		<div id="licence_renewal_pagination_area">
+					                    </div>
+                </div>
+                <script>
+				$("#uploadForm").on('submit',(function(e) {
+					e.preventDefault();
+					$.ajax({
+						url: "model/licence_renewal_model.php",
+						type: "POST",
+						data:  new FormData(this),
+						contentType: false,
+						cache: false,
+						processData:false,
+						success: function(data){
+						   if(data == 'yes')
+						   {
+							   $('#licence_renew_success_msg').show().text('New records added successfully.');
+							   get_latest_licence_renewal_record();
+							   $('.insider').val('');
+							   window.setTimeout('location.reload()', 3000);
+						   }
+						   else
+						      $('#licence_renew_error_msg').show().text('ERROR !  Some thing wrong, please try again.');
+						},
+						error: function() {
+						}
+				   });
+				}));
+				function submit_licence_renewal_form()
+				{
+					if($('.receipt_no').val() != '')
+					{
+						$.ajax({
+							url:"model/licence_renewal_model.php",
+							type:'POST',
+							data:'action=validate_receipt_no&receipt_no='+$('.receipt_no').val(),
+							beforeSend: function(){
+								$('#licence_renew_success_msg').html('').hide();
+								$('#licence_renew_error_msg').html('').hide();
+							},
+							success:function(result){
+								if(result == 'yes')
+								{
+									$('#sub_btn_licence_renewal').trigger('click');
+
+								}
+								else if(result == 'no')
+								{
+									$('#licence_renew_error_msg').show().text('ERROR !  Receipt number not available.');
+									$('.receipt_no').focus();
+
+								}
+							}
+						});
+					}
+					else
+					   $('.receipt_no').focus();
+
+				}
+				</script>
+                <script>
+					function Change_expire_date_licence_renewal(val)
+					{
+
+						//alert($('.expiry_date').val());
+						var dateAr = val.split('-');
+						var newDate = dateAr[2] + '-' + dateAr[1] + '-' + dateAr[0];
+						var someDate = new Date(newDate);
+						//alert(someDate);
+						var numberOfDaysToAdd = 1095;
+						someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
+						if(!isNaN(someDate.getTime())){
+
+							//alert(someDate);
+							//alert(someDate.getDate());
+							var day = someDate.getDate();
+							var month = someDate.getMonth() + 1;
+							if (month < 10) {
+								month = "0" + month;
+							}
+							var year = someDate.getFullYear();
+							newDate = day + '-' + month + '-' + year;
+							$(".licence_renew_expire_date").val(newDate);
+						}
+						else
+							$(".licence_renew_expire_date").val('dd/mm/yy');
+
+
+					}
+
+					</script>
+            </div>
+            </div>
+                                    <div id="search-licence" class="tab-pane fade">
+            <div class="search-border">Search by</div>
+            <form role="form" class="form-inline">
+            <div class="form-group">
+            <label for="text">Name:</label><input id="text" type="text" onkeyup="get_l_record_by_name(this.value);" class="form-control">
+            </div>
+            <div class="form-group"><label for="number">Licence:</label><input id="text" type="text" onkeyup="get_l_record_by_no(this.value);" class="form-control"></div>
+            <div class="form-group"><label for="number">Nationality:</label><input id="text" type="text" onkeyup="get_l_record_by_nationality(this.value);" class="form-control"></div>
+            </form>
+            <div class="table-responsive">
+            <table class="table table-bordered">
+            	<thead>
+                	<tr class="success">
+                    	<th>Licence No</th>
+                        <th>Holder's Name</th>
+                        <th>Nationality</th>
+                        <th>Date of Birth</th>
+                        <th>Place of Issue</th>
+                        <th>Date of Issue</th>
+                        <th>Expire Date</th>
+                        <th>Vehicle Type</th>
+                        <th>PR</th>
+                    </tr>
+                </thead>
+                <tbody id="licence_record_area">
+                                	<tr>
+                    	<td>122</td>
+                        <td>latif</td>
+                        <td>Somali</td>
+                        <td>21/12/2020</td>
+                        <td>Mogadishu</td>
+                        <td>21/12/2020</td>
+                        <td>21/12/2023</td>
+                        <td>D</td>
+                        <td><a href="http://www.gaadiidka.in/PRA/licence.php?licence_search_id=122" class="fa fa-print"></a></td>
+                   </tr>
+                                	<tr>
+                    	<td>19655</td>
+                        <td>C/qaadir Abuu Maxamed</td>
+                        <td>Somalia</td>
+                        <td>01/01/1950</td>
+                        <td>Muqdisho</td>
+                        <td>20/03/2016</td>
+                        <td>20/03/2019</td>
+                        <td>D</td>
+                        <td><a href="http://www.gaadiidka.in/PRA/licence.php?licence_search_id=19655" class="fa fa-print"></a></td>
+                   </tr>
+                                	<tr>
+                    	<td>19543</td>
+                        <td>C/naasir Cabdi Cilmi</td>
+                        <td>Somalia</td>
+                        <td>01/01/1975</td>
+                        <td>Muqdisho</td>
+                        <td>19/03/2016</td>
+                        <td>19/03/2019</td>
+                        <td>A1</td>
+                        <td><a href="http://www.gaadiidka.in/PRA/licence.php?licence_search_id=19543" class="fa fa-print"></a></td>
+                   </tr>
+                        <tr>
+                    	<td>17932</td>
+                        <td>Daud Muse Daud</td>
+                        <td>Somalia</td>
+                        <td>28/02/1984</td>
+                        <td>Muqdisho</td>
+                        <td>13/02/2016</td>
+                        <td>13/02/2019</td>
+                        <td>D</td>
+                        <td> <input type="button" id="btn_printVal" value="print-this" "   />   <a href="http://www.gaadiidka.in/PRA/licence.php?licence_search_id=17932" class="fa fa-print"></a></td>
+                   </tr>
+                                	<tr>
+                    	<td>11326</td>
+                        <td>C/waaxid X.Cali Nuur</td>
+                        <td>Somalia</td>
+                        <td>01/01/1984</td>
+                        <td>Muqdisho</td>
+                        <td>26/10/2015</td>
+                        <td>26/10/2018</td>
+                        <td>D</td>
+                        <td><a href="http://www.gaadiidka.in/PRA/licence.php?licence_search_id=11326" class="fa fa-print"></a></td>
+                   </tr>
+                                	<tr>
+                    	<td>2</td>
+                        <td>C/risaaq Axmed Max'ed</td>
+                        <td>Somalia</td>
+                        <td>25/03/1961</td>
+                        <td>Muqdisho</td>
+                        <td>31/01/2015</td>
+                        <td>31/01/2017</td>
+                        <td>D</td>
+                        <td><a href="http://www.gaadiidka.in/PRA/licence.php?licence_search_id=2" class="fa fa-print"></a></td>
+                   </tr>
+                                	<tr>
+                    	<td>7611</td>
+                        <td>Cali Yuusuf Sh.Faarax</td>
+                        <td>Somalia</td>
+                        <td>01/01/1959</td>
+                        <td>Muqdisho</td>
+                        <td>01/09/2015</td>
+                        <td>01/09/2018</td>
+                        <td>D</td>
+                        <td><a href="http://www.gaadiidka.in/PRA/licence.php?licence_search_id=7611" class="fa fa-print"></a></td>
+                   </tr>
+                                	<tr>
+                    	<td>8435</td>
+                        <td>C/raxman C/qaadir Xuseen</td>
+                        <td>Somalia</td>
+                        <td>18/05/1991</td>
+                        <td>Muqdisho</td>
+                        <td>16/09/2015</td>
+                        <td>16/09/2018</td>
+                        <td>D</td>
+                        <td><a href="http://www.gaadiidka.in/PRA/licence.php?licence_search_id=8435" class="fa fa-print"></a></td>
+                   </tr>
+                                	<tr>
+                    	<td>8621</td>
+                        <td>C/llaahi Cawil Cali</td>
+                        <td>Somalia</td>
+                        <td>01/01/1994</td>
+                        <td>Muqdisho</td>
+                        <td>21/09/2015</td>
+                        <td>21/09/2018</td>
+                        <td>D</td>
+                        <td><a href="http://www.gaadiidka.in/PRA/licence.php?licence_search_id=8621" class="fa fa-print"></a></td>
+                   </tr>
+                                	<tr>
+                    	<td>22570</td>
+                        <td>Max'ed-Wali Caddow C/nur</td>
+                        <td>Somalia</td>
+                        <td>01/01/1990</td>
+                        <td>Muqdisho</td>
+                        <td>25/05/2016</td>
+                        <td>25/05/2019</td>
+                        <td>D</td>
+                        <td><a href="http://www.gaadiidka.in/PRA/licence.php?licence_search_id=22570" class="fa fa-print"></a></td>
+                   </tr>
+                                </tbody>
+            </table>
+            <div id="licence_pagination_area">
+            <ul class="pagination"><li class="page_info">Page 1 of 2328</li><li><a class="current">1</a></li><li><a href="javascript:void(0);" onclick="licence_pagination(2);">2</a></li><li><a href="javascript:void(0);" onclick="licence_pagination(3);">3</a></li><li><a href="javascript:void(0);" onclick="licence_pagination(2327);">2327</a></li><li><a href="javascript:void(0);" onclick="licence_pagination(2);">Next ›</a></li></ul>            </div>
+            </div>
+                                <div class="upload-csv">
+							<h4>Upload .csv file to database</h4>
+                        <form role="form" class="upload" method="post" action="http://www.gaadiidka.in/PRA/model/upload_csv_data.php" enctype="multipart/form-data">
+                            <input id="file" type="file" name="csv_file_for_licence" required="required" class="inputfile">
+                            <label for="file" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-plus"> Select .csv</span></label>
+                            <input id="send" type="submit" name="submit" class="inputfile">
+                            <a href="javascript:void(0);" onclick="show_message()" class="btn btn-lg btn-default">
+                                <span class="glyphicon glyphicon-upload"> Upload .csv</span>
+                              </a>
+                            <label for="send" class="btn btn-lg btn-default" id="csv_upload_btn" style="display:none;">Upload</label>
+                            <p style="display:none;" id="csv_msg">CSV file data has been adding in database. It may take few minutes.<br>
+                            Please Wait......</p>
+                        </form>
+                    </div>
+
+                   <script>
+                    function show_message()
+                    {
+                        $('#csv_upload_btn').trigger('click');
+						if($('#file').val() != '')
+                            $('#csv_msg').show();
+                    }
+                    </script>
+                    
+            </div>
+
+            <div id="card-list" class="tab-pane in active">
+            <div class="search-border2">Search by date</div>
+            <form role="form" class="form-inline"><div class="form-group"><label for="text">From Date:</label><input id="text" type="text" onkeyup="get_l_record_by_from_date(this.value);" class="form-control" placeholder="dd-mm-yy"></div>
+            <div class="form-group"><label for="number">To Date:</label><input id="text" type="text" onkeyup="get_l_record_by_to_date(this.value);" class="form-control" placeholder="dd-mm-yy"></div>
+            </form>
+                        <div class="table-responsive">
+            	<table class="table table-bordered">
+                	<thead>
+                    	<tr class="success">
+                            <th></th>
+                        	<th>Licence No</th>
+                            <th>Holder's Name</th>
+                            <th>Nationality</th>
+                            <th>Date of Birth</th>
+                            <th>Place of Issue</th>
+                            <th>Date of Issue</th>
+                            <th>Expire Date</th>
+                            <th>Vehicle Type</th>
+                            <th>E</th>
+                            <th>Del</th>
+                        </tr>
+                                                <tr class="active">
+                          <form method="post" action="http://www.gaadiidka.in/PRA/model/licence_model.php"></form>
+                        	<td></td>
+                            <td><input type="text" placeholder="123" name="licence_no" required="required" class="insider" value="123"></td>
+                            <td><input type="text" placeholder="Holders name" name="name" required="" class="insider" value=""></td>
+                            <td><input type="text" placeholder="Nationality" name="nationality" required="" class="insider" value=""></td>
+                            <td><input type="text" placeholder="dd-mm-yy" name="date_birth" required="" class="insider" value=""></td>
+                            <td><input type="text" placeholder="Place" name="issue_place" class="insider" value="Mogadishu"></td>
+                            <td><input type="text" placeholder="dd-mm-yy" name="issue_date" onkeyup="Change_expire_date_card(this.value)" required="" class="insider" value=""></td>
+                            <td><input type="text" id="expire_date" placeholder="dd-mm-yy" name="expiry_date" required="" class="insider" value=""></td>
+                            <td><input type="text" placeholder="Vehicle type" name="vehicle_types" required="" class="insider" value=""></td>
+                            <td colspan="2"><a href="javascript:void(0);" class="fa fa-save" onclick="submit_card_licence_form()"></a><input type="hidden" name="add_licence_data">
+                               <input type="submit" value="submit" style="display:none;" id="sub_btn_add_licence_card">
+                            </td>
+                          
+                        </tr>
+                                            </thead>
+                    <tbody id="licence_card_record_area">
+					                         <tr>
+                            <td><a href="http://www.gaadiidka.in/PRA/licence.php?print_licence_no=122" class="fa fa-print"></a></td>
+                            <td>122</td>
+                            <td>latif</td>
+                            <td>Somali</td>
+                            <td>21/12/2020</td>
+                            <td>Mogadishu</td>
+                            <td>21/12/2020</td>
+                            <td>21/12/2023</td>
+                            <td>D</td>
+                            <td><a href="http://www.gaadiidka.in/PRA/licence.php?cardId=MTE1MTI4" class="glyphicon glyphicon-edit"></a></td>
+                            <td><a href="http://www.gaadiidka.in/PRA/model/licence_model.php?delete_cardID=MTE1MTI4" onclick="return confirm(&#39;Are you sure to delete ? &#39;);" class="glyphicon glyphicon-trash"></a></td>
+                       </tr>
+                                        </tbody>
+               </table>
+               <div id="licence_card_pagination_area">
+				                </div>
+                
+            </div>
+
+            </div>
+                         
+            <!-- --------------------------------------------------------- -->
+
+            <div id="tab" style="display:none;">
+
+                <div style="border-bottom:1px solid #333;overflow:auto;">
+                    <div style="font-weight:bold;" id="p_r_receipt_no_1">   Date: 21 Jun, 2016  05:43:08am</div>
+                </div>
+                <h3> <center>LICENCE DETAILS </center></h3>
+                <div style="padding-left:20px;">
+                    <table style="width:98%;text-align:left;" border="1" cellpadding="0" cellspacing="0">
+                       <!--<tr >
+                           <th style="padding:5px;">Licence No:</th>
+                           <td style="padding:5px;"> </td>
+                           <th style="padding:5px;"> Place of Issue:</th>
+                           <td style="padding:5px;"></td>
+                        </tr> -->
+                        <tbody><tr>
+                           <th style="padding:5px;">Date of Issue:</th>
+                           <td style="padding:5px;"></td>
+                           <th style="padding:5px;">Expire Date:</th>
+                           <td style="padding:5px;"></td>
+													 <th style="padding:5px;text-align:center;">Holders Photo</th>
+												</tr>
+                        <tr>
+                           <th style="padding:5px;">Licence No:</th>
+													 <td style="padding:5px;" colspan="3"></td>
+													 <td style="padding:5px;" rowspan="7">
+														 <div class="col">
+ 				                       				                                 <img style="display:block;margin:0 auto;" src="./Abdulla_files/user-big.png">
+ 				                           
+ 				                     </div>
+													 </td>
+												</tr>
+                        <tr>
+                           <th style="padding:5px;">Place of Issue:</th>
+													 <td style="padding:5px;" colspan="3"></td>
+                        </tr>
+												<tr>
+													 <th style="padding:5px;">Holder's Name::</th>
+													 <td style="padding:5px;" colspan="3"></td>
+												</tr>
+												<tr>
+													 <th style="padding:5px;">Nationality:</th>
+													 <td style="padding:5px;" colspan="3"></td>
+												</tr>
+												<tr>
+													 <th style="padding:5px;">Date of Birth:</th>
+													 <td style="padding:5px;" colspan="3"></td>
+												</tr>
+												<tr>
+													 <th style="padding:5px;">Gender:</th>
+													 <td style="padding:5px;" colspan="3"></td>
+												</tr>
+												<tr>
+                           <th style="padding:5px;">Authorized vehicles:</th>
+													 <td style="padding:5px;" colspan="3"></td>
+                        </tr>
+										 </tbody></table>
+                </div>
+                
+                <hr>
+                <div id="Licence_image_card">
+                   <img src="./Abdulla_files/Licence.jpg" style="border:1px solid #666666;">
+                </div>
+                
+            </div>
+
+						<!-- --------------------------------------------------------- -->
+
+			<div id="tab2" style="display:none;">
+
+                <div style="border-bottom:1px solid #333;overflow:auto;">
+                    <div style="font-weight:bold;" id="p_r_receipt_no_1">   Date: 21 Jun, 2016  05:43:08am</div>
+                </div>
+                <h3> <center>DRIVER AND LICENSE DETAILS</center></h3>
+                <div style="padding-left:20px;">
+                    <table style="width:98%;text-align:left;" border="1" cellpadding="0" cellspacing="0">
+                        <tbody><tr>
+                           <th style="padding:5px;">Date of Issue:</th>
+                           <td style="padding:5px;"></td>
+                           <th style="padding:5px;">Expire Date:</th>
+                           <td style="padding:5px;"></td>
+													 <th style="padding:5px;text-align:center;">Holders Photo</th>
+												</tr>
+                        <tr>
+                           <th style="padding:5px;">Licence No:</th>
+													 <td style="padding:5px;" colspan="3"></td>
+													 <td style="padding:5px;" rowspan="7">
+														 <div class="col">
+ 				                       				                                 <img style="display:block;margin:0 auto;" src="./Abdulla_files/user-big.png">
+ 				                           
+ 				                     </div>
+													 </td>
+												</tr>
+                        <tr>
+                           <th style="padding:5px;">Place of Issue:</th>
+													 <td style="padding:5px;" colspan="3"></td>
+                        </tr>
+												<tr>
+													 <th style="padding:5px;">Holder's Name::</th>
+													 <td style="padding:5px;" colspan="3"></td>
+												</tr>
+												<tr>
+													 <th style="padding:5px;">Mother's Name:</th>
+													 <td style="padding:5px;" colspan="3"></td>
+												</tr>
+												<tr>
+													 <th style="padding:5px;">Nationality:</th>
+													 <td style="padding:5px;" colspan="3"></td>
+												</tr>
+												<tr>
+													 <th style="padding:5px;">Date of Birth:</th>
+													 <td style="padding:5px;"></td>
+													 <th style="padding:5px;">Place of Birth:</th>
+													 <td style="padding:5px;"></td>
+												</tr>
+												<tr>
+													 <th style="padding:5px;">Gender:</th>
+													 <td style="padding:5px;" colspan="3"></td>
+												</tr>
+												<tr>
+													 <th style="padding:5px;">Personal ID:</th>
+													 <td style="padding:5px;" colspan="4"></td>
+												</tr>
+												<tr>
+													<th style="padding:5px;">Residence Address:</th>
+													<td style="padding:5px;" colspan="4"></td>
+												</tr>
+												<tr>
+												  <th style="padding:5px;">Mobile:</th>
+											  	<td style="padding:5px;" colspan="4"></td>
+										    </tr>
+												<tr>
+													<th style="padding:5px;">Email Address:</th>
+													<td style="padding:5px;" colspan="4"></td>
+										  	</tr>
+												<tr>
+                          <th style="padding:5px;">Comments:</th>
+													<td style="padding:5px;" colspan="4"></td>
+                        </tr>
+												<tr>
+                           <th style="padding:5px;">Authorized vehicles:</th>
+													 <td style="padding:5px;" colspan="4"></td>
+                        </tr>
+										 </tbody></table>
+                </div>
+					<div class="form-inline" style="margin-bottom:20px;">
+                    <div class="table-responsive" style="padding-left:20px;"><b>Authorized vehicles:</b>
+	                    
+                        <table style="width:80%;" class="table table-bordered">
+	                    <thead>
+	                    <tr>
+                            <th>
+                            <label for="check10" class="for-check"><img src="./Abdulla_files/class-a.png"></label>
+                            </th>
+                            <th><label for="check12" class="for-check"><img src="./Abdulla_files/class-a1.png"></label></th>
+                            <th><label for="check13" class="for-check"><img src="./Abdulla_files/class-b.png"></label></th>
+                            <th><label for="check14" class="for-check"><img src="./Abdulla_files/class-c.png"></label></th>
+                            <th><label for="check15" class="for-check"><img src="./Abdulla_files/class-c1.png"></label></th>
+                            <th><label for="check16" class="for-check"><img src="./Abdulla_files/class-d.png"></label></th>
+                            <th><label for="check17" class="for-check"><img src="./Abdulla_files/class-e.png"></label></th>
+                            <th><label for="check18" class="for-check"><img src="./Abdulla_files/class-f.png"></label></th>
+                            <th><label for="check19" class="for-check"><img src="./Abdulla_files/class-g.png"></label></th>
+	                    </tr>
+	                    </thead>
+	                    <tbody>
+	                    <tr align="center"><td>A</td><td>A1</td><td>B</td><td>C</td><td>C1</td><td>D</td><td>E</td><td>F</td><td>G</td></tr></tbody>
+	                    <tbody><tr>
+                            <th>
+                            <input id="check10" name="vehicle_types[]" value="A" type="checkbox">
+                            </th>
+                            <th><input id="check12" name="vehicle_types[]" value="A1" type="checkbox"></th>
+                            <th><input id="check13" name="vehicle_types[]" value="B" type="checkbox"></th>
+                            <th><input id="check14" name="vehicle_types[]" value="C" type="checkbox"></th>
+                            <th><input id="check15" name="vehicle_types[]" value="C1" type="checkbox"></th>
+                            <th><input id="check16" name="vehicle_types[]" value="D" type="checkbox"></th>
+                            <th><input id="check17" name="vehicle_types[]" value="E" type="checkbox"></th>
+                            <th><input id="check18" name="vehicle_types[]" value="F" type="checkbox"></th>
+                            <th><input id="check19" name="vehicle_types[]" value="G" type="checkbox"></th>
+	                    </tr>
+                        </tbody></table>
+                    </div>
+                </div>
+            </div>
+
+             <!-- ------------------ -->
+             <div id="tab3" style="display:none;width:200px;height:200px;">
+				<div id="Licence_image_card" style="height:640px;">
+                   <img src="./Abdulla_files/Licence.jpg" style="border:1px solid #666666;">
+                </div>
+                <div id="Licence_image_card" style="height:640px;">
+                   <img src="./Abdulla_files/licence_back.png" style="border:1px solid #666666;">
+                </div>
+             </div>
+
+
+                <!--<div style="padding-left:20px;">
+                    <h5>Licence owner details:</h5>
+                    <div class="col" style="float:left;">
+                                                       <img src="assets/img/user-big.png"/>
+                           
+                     </div>
+                     <div  style="float:left; width:80%;margin-left:20px;">
+                        <table style="width:100%;text-align:left;" border="1" cellpadding="0" cellspacing="0">
+
+
+
+                            <tr>
+                               <th style="padding:5px;">Holder's Name::</th>
+                               <td style="padding:5px;"></td>
+                               <th style="padding:5px;">Nationality:</th>
+                               <td style="padding:5px;"></td>
+                            </tr>
+                            <tr>
+                               <th style="padding:5px;">Gender:</th>
+                               <td style="padding:5px;"></td>
+                               <th style="padding:5px;">Residence Address:</th>
+                               <td style="padding:5px;"></td>
+
+                            </tr>
+                            <tr>
+                               <th  style="padding:5px;">Mother's Name:</th>
+                               <td style="padding:5px;" ></td>
+                               <th style="padding:5px;">Email Address:</th>
+                               <td style="padding:5px;"></td>
+                            </tr>
+                            <tr>
+                               <th style="padding:5px;">Date of Birth:</th>
+                               <td style="padding:5px;"></td>
+                               <th style="padding:5px;">Contacts:</th>
+                               <td style="padding:5px;"></td>
+                            </tr>
+                            <tr>
+                               <th style="padding:5px;">Place of Birth:</th>
+                               <td style="padding:5px;"></td>
+                               <th style="padding:5px;">Personal ID:</th>
+                               <td style="padding:5px;"></td>
+                            </tr>
+
+
+                         </table>
+                     </div>
+                </div> -->
+
+
+          <!-- ///////////////////////////////////////////////////////////////////
+               *******************************************************************
+          -->
+
+        </div>
+    </div>
+ <div id="div_print" name="div_print"  style="visible:false" />
+<script> 
+    $(document).ready(function(e) {
+        		
+    });
+	function getImages()
+	{
+			 //PrintReports('#tab3');
+			 window.open('licence_print.php', '_blank');
+			
+	}
+
+	function Change_expire_date_card(val)
+	{
+
+		//alert($('.expiry_date').val());
+		var dateAr = val.split('-');
+		var newDate = dateAr[2] + '-' + dateAr[1] + '-' + dateAr[0];
+		var someDate = new Date(newDate);
+		//alert(someDate);
+		var numberOfDaysToAdd = 1095;
+		someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
+		if(!isNaN(someDate.getTime())){
+
+			//alert(someDate);
+			//alert(someDate.getDate());
+			var day = someDate.getDate();
+			var month = someDate.getMonth() + 1;
+			if (month < 10) {
+				month = "0" + month;
+			}
+			var year = someDate.getFullYear();
+			newDate = day + '-' + month + '-' + year;
+			$("#expire_date").val(newDate);
+		}
+		else
+			$("#expire_date").val('dd/mm/yy');
+
+
+	}
+    $('#fileinput').change(function(){
+		$('#gallery').html('');
+
+	});
+	$('#licence_piture').change(function(){
+		 $('#pictures_2').html('');
+	});
+	</script>
+     <script src="./Abdulla_files/gallery.js"></script>
+    <script src="./Abdulla_files/gallery_2.js"></script>
+ </div>
+<!-- -------------------------------------------- -->
+    <!-- Pop up model  -->
+    <div class="modal fade" id="myModal" tabindex="-1" style="width:900px;background-color: transparent;border:none;left:45%;overflow:hidden;" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width:auto;">
+            <div class="modal-content">
+                <div class="modal-header" style="background: #E8E7E7;text-align: center;color: #131212;">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">Receipt Preview</h4>
+                </div>
+                <div class="modal-body" id="receipt_preview_popup">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-lg btn-default" data-dismiss="modal">Close</button>
+                                   </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./Abdulla_files/accordion.js"></script>
+    <script src="./Abdulla_files/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js">-->
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+    $( document ).ready(function() {
+	  //#123
+		var tablecontent = $(this).find("#licence_card_record_area").html();  
+	
+	 
+        console.log( "document loaded" );
+		
+		var textval="";
+		$("#btn_printVal").click(function() {
+		$(this).closest('tr').find('td').each(function() {
+         textval+= $(this).text(); // this will be the text of each <td>
+	   });
+		
+
+		//window.print();
+		
+
+	   
+	   $("#div_print").html(textval);
+			
+	  console.log(" This is div Content"+$("#div_print").html());	
+	   //$$$$/A:p /S:f /D:C:\test\gaadiidka.onx  /F0:ABC1234  /F1:Abdullatif Mohamed Abdulla/F2:Somali/F3:20-12-1985/F4:Mogadiscio /F5:A-B /F6:25-05-2016 /F7:24-05-2017 /IPhotograph:c:\test\abdellatif.jpg$$$$
+	  // $("#div_print").print();
+	 printDiv(textval);
+	  
+	}
+	
+	);
+
+    });
+ 
+ function printDiv(content) 
+{
+
+
+  content = "$$$$/A:p /S:f /D:C:\\gwa\\gaadiidka.onx  /F0:ABC1234  /F1:Abdullatif Mohamed Abdulla/F2:Somali/F3:20-12-1985/F4:Mogadiscio /F5:A-B /F6:25-05-2016 /F7:24-05-2017 /IPhotograph:c:\\gwa\\abdellatif.jpg$$$$";
+	  
+  var newWin=window.open('','Print-Window');
+
+  newWin.document.open();
+
+  newWin.document.write('<html><body onload="window.print()">'+content+'</body></html>');
+
+  newWin.document.close();
+
+  setTimeout(function(){newWin.close();},10);
+
+}
+     function print_data_gk(){
+			alert("print_data_gk");
+	 		var tablecontent_2 = $(this).closest("tr").text();      // Finds the closest row <tr> 
+                      // .find(".nr")     // Gets a descendent with class="nr"
+                             // Retrieves the text within <td>
+							 alert("print_data_gk"+tablecontent_2);
+		 console.log( "document loaded" +tablecontent_2);
+		 
+	 }
+ 
+ 
+    $( window ).load(function() {
+        console.log( "window loaded" );
+    });
+    </script>
+<script>
+
+function submit_form()
+{   // receipt_no from_date received_from amount vehicle_no  for_opt
+	var error = 0, is_focus = 0;
+	if($('#receipt_no').val() == '')
+	{
+		 $('#receipt_no').focus();
+		 is_focus = 1; error = 1;
+	}
+	if($('#from_date').val() == '' && is_focus == 0)
+	{
+		 $('#from_date').focus();
+		 is_focus = 1; error = 1;
+	}
+	if($('#expire_date').val() == '' && is_focus == 0)
+	{
+		 $('#expire_date').focus();
+		 is_focus = 1; error = 1;
+	}
+	if($('#received_from').val() == '' && is_focus == 0)
+	{
+		 $('#received_from').focus();
+		 is_focus = 1; error = 1;
+	}
+
+	if($('#for_opt').val() == '' && is_focus == 0)
+	{
+		 $('#for_opt').focus();
+		 is_focus = 1; error = 1;
+	}
+	if($('#amount').val() == '' && is_focus == 0)
+	{
+		 $('#amount').focus();
+		 is_focus = 1; error = 1;
+	}
+	if($('#vehicle_no').val() == '' && is_focus == 0)
+	{
+		 $('#vehicle_no').focus();
+		 is_focus = 1; error = 1;
+	}
+	if(error == 0)
+	{
+					$.ajax({
+				url:"model/receipt_model.php",
+				type:'POST',
+				data:'action=validate_receipt_no&receipt_no='+$('#receipt_no').val(),
+				beforeSend: function(){
+					//$('#receipt_records_pagination').html('');
+					//$('#receipt_records').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+				},
+				success:function(result){
+					if(result == 'yes')
+					{
+						$('#show_error_msg').show().text('ERROR !  Receipt number is already exists.');
+						$('#receipt_no').focus();
+					}
+					else if(result == 'no')
+					{
+						$('#receipt_form').submit();
+					}
+				}
+			});
+			}
+		//$('#receipt_form').submit();
+}
+setTimeout(function(){
+	$('.alert').fadeOut(3000);
+},4000);
+
+// Ajax calls for search...
+var s_name = '', s_receipt_no = '', s_from_date = '', s_to_date = '',receipt_records = '', receipt_records_pagination = '';
+function get_record_by_name(val)
+{
+	s_name = val;
+	get_records();
+}
+function get_record_by_receipt_no(val)
+{
+	s_receipt_no = val;
+	get_records();
+}
+function get_record_by_from_date(val)
+{
+	s_from_date = val;
+	get_records();
+}
+function get_record_by_to_date(val)
+{
+	s_to_date = val;
+	get_records();
+}
+// ajax call
+function get_records()
+{
+	if(receipt_records == '')
+	{
+	    receipt_records = $('#receipt_records').html();
+		receipt_records_pagination = $('#receipt_records_pagination').html();
+	}
+	if(s_name != '' || s_receipt_no != '' || (s_from_date != '' && s_to_date != ''))
+	{
+		$.ajax({
+			url:"model/receipt_model.php",
+			type:'POST',
+			data:'search_name='+s_name+'&s_receipt_no='+s_receipt_no+'&s_from_date='+s_from_date+'&s_to_date='+s_to_date,
+			beforeSend: function(){
+				$('#receipt_records_pagination').html('');
+				$('#receipt_records').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){
+				var data = $.parseJSON(result);
+				if(data.result == '')
+					$('#receipt_records').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{
+					$('#receipt_records').html(data.result);
+					$('#receipt_records_pagination').html(data.pagination);
+				}
+			}
+		});
+
+	}
+	else
+	{
+		if(receipt_records != '')
+		{
+		 	$('#receipt_records').html(receipt_records);
+			$('#receipt_records_pagination').html(receipt_records_pagination);
+		}
+	}
+}
+
+// Account list Form
+function account_list()
+{
+	$('#acc_form_sub_btn').trigger('click');
+	//$('#account_list_form').submit();
+}
+// acc type
+function account_type()
+{
+	$('#acc_type_form_sub_btn').trigger('click');
+	//$('#account_type_form').submit();
+}
+// Search Accounts list w.r.t data
+var acc_lit_records = '';
+function get_account_data_date(date)
+{
+	if(acc_lit_records == '')
+	{
+	    acc_lit_records = $('#account_list_records').html();
+		acc_lit_records_pagination = $('#account_list_records_pagination').html();
+	}
+	if(date != '')
+	{
+		$.ajax({
+			url:"model/accounts_model.php",
+			type:'POST',
+			data:'s_by_date='+date+'&action=search_account_list_by_date',
+			beforeSend: function(){
+				$('#account_list_records_pagination').html('');
+				$('#account_list_records').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){
+				var data = $.parseJSON(result);
+				if(data.result == '')
+					$('#account_list_records').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{
+					$('#account_list_records').html(data.result);
+					$('#account_list_records_pagination').html(data.pagination);
+				}
+			}
+		});
+
+	}
+	else
+	{
+		if(receipt_records != '')
+		{
+		 	$('#account_list_records').html(acc_lit_records);
+			$('#account_list_records_pagination').html(acc_lit_records_pagination);
+		}
+	}
+}
+</script>
+<script type="text/javascript">
+
+    // show preview...
+	function show_receipt_preview_popup()
+	{
+		for(var i = 1; i <=2; i++){
+			$('#p_r_receipt_no_'+i).text(' Receipt No :'+$('#receipt_no').val());
+			$('#p_r_date_'+i).text(' Date: '+$('#from_date').val());
+			$('#p_r_time_'+i).text(' Time:  05:43');
+			$('#p_r_received_from_'+i).text($('#received_from').val());
+			$('#p_r_amount_'+i).text('$'+$('#amount').val());
+			$('#p_r_amount_word_'+i).text(toWords($('#amount').val()));
+			$('#p_r_for_'+i).text($('#for_opt').val());
+			$('#p_r_vechical_no_'+i).text($('#vehicle_no').val());
+			var comnet_str = $('#comments').val();
+			if(comnet_str.length > 50)
+			     $('#p_r_comment_'+i).css('width','auto');
+			else
+			     $('#p_r_comment_'+i).css('width','200px');
+			$('#p_r_comment_'+i).text($('#comments').val());
+			$('#p_r_accountant_'+i).text('');
+		}
+		$('#receipt_preview_popup').html($('#tab').html());
+	}
+	// Print section for receipts
+    function PrintElem(elem)
+    {    // receipt_no from_date received_from amount vehicle_no  for_opt
+        // p_r_receipt_no  p_r_date  p_r_time   p_r_received_from  p_r_amount  p_r_amount_word  p_r_for   p_r_vechical_no  p_r_comment  p_r_accountant
+		for(var i = 1; i <=2; i++){
+			$('#p_r_receipt_no_'+i).text(' Receipt No :'+$('#receipt_no').val());
+			$('#p_r_date_'+i).text(' Date: '+$('#from_date').val());
+			$('#p_r_time_'+i).text(' Time:  05:43');
+			$('#p_r_received_from_'+i).text($('#received_from').val());
+			$('#p_r_amount_'+i).text('$'+$('#amount').val());
+			$('#p_r_amount_word_'+i).text(toWords($('#amount').val()));
+			$('#p_r_for_'+i).text($('#for_opt').val());
+			$('#p_r_vechical_no_'+i).text($('#vehicle_no').val());
+			var comnet_str = $('#comments').val();
+			if(comnet_str.length > 50)
+			     $('#p_r_comment_'+i).css('width','auto');
+			else
+			     $('#p_r_comment_'+i).css('width','200px');
+			$('#p_r_comment_'+i).text($('#comments').val());
+			$('#p_r_accountant_'+i).text('');
+		}
+
+		Popup($(elem).html());
+    }
+    // Print for vehicles
+	function PrintVehicle(elem)
+    {
+	    if($('#search_vehicle_no').val() == '')
+		    $('#search_vehicle_no').focus();
+		else
+			Popup($(elem).html());
+    }
+	// Print for vehicles
+	function PrintVehicle_auto(elem)
+    {
+	    Popup($(elem).html());
+    }
+	// Report module
+	function PrintReports(elem)
+	{
+		Popup($(elem).html());
+	}
+	
+    function Popup(data)
+    {
+        var mywindow = window.open('', 'Report', 'height=600,width=600');
+		mywindow.document.write('<html><head>');
+        /*optional stylesheet*/ //mywindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+        mywindow.document.write('</head><body >');
+        mywindow.document.write(data);
+        mywindow.document.write('</body></html>');
+
+        mywindow.document.close(); // necessary for IE >= 10
+        mywindow.focus(); // necessary for IE >= 10
+
+        mywindow.print();
+        mywindow.close();
+
+        return true;
+    }
+	// Licence module
+	function PrintLicence_img(elem)
+	{
+		Popup2($(elem).html());
+	}
+	function Popup2(data)
+    {
+        var mywindow = window.open('', '', 'height=500,width=700');
+		mywindow.document.write('<html><head>');
+        /*optional stylesheet*/ //mywindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+        mywindow.document.write('</head><body >');
+        mywindow.document.write(data);
+        mywindow.document.write('</body></html>');
+        
+		
+        mywindow.document.close(); // necessary for IE >= 10
+        mywindow.focus(); // necessary for IE >= 10
+
+        mywindow.print();
+        mywindow.close();
+
+        return true;
+    }
+
+// Ajax Pagination
+function call_pagination(page)
+{
+	$.ajax({
+		url: 'model/accounts_model.php',
+		type:'POST',
+		data: 'action=account_type_ajax_pagination&page='+page,
+		beforeSend: function(){
+			$('#acc_type_records').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){
+			var data = $.parseJSON(result);
+			if(data.result != '')
+			    $('#acc_type_records').html(data.result);
+			if(data.pagination != '')
+			    $('#pagination_area').html(data.pagination);
+		}
+	});
+}
+// Receipt Ajax Pagination
+function receipt_ajax_pagination(page)
+{
+	$.ajax({
+		url: 'model/receipt_model.php',
+		type:'POST',
+		data: 'action=receipt_ajax_pagination&page='+page,
+		beforeSend: function(){
+			$('#receipt_records').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){
+			var data = $.parseJSON(result);
+			if(data.result != '')
+			    $('#receipt_records').html(data.result);
+			if(data.pagination != '')
+			    $('#receipt_records_pagination').html(data.pagination);
+		}
+	});
+}
+// Receipt Ajax Pagination for vechile module
+function receipt_ajax_pagination_vehicle(page)
+{
+	$.ajax({
+		url: 'model/receipt_model.php',
+		type:'POST',
+		data: 'action=receipt_ajax_pagination_vehicle&page='+page,
+		beforeSend: function(){
+			$('#receipt_records').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){
+			var data = $.parseJSON(result);
+			if(data.result != '')
+			    $('#receipt_records').html(data.result);
+			if(data.pagination != '')
+			    $('#receipt_records_pagination').html(data.pagination);
+		}
+	});
+}
+// Account List Ajax Pagination
+function acc_list_ajax_pagination(page)
+{
+	$.ajax({
+		url: 'model/accounts_model.php',
+		type:'POST',
+		data: 'action=account_list_ajax_pagination&page='+page,
+		beforeSend: function(){
+			$('#account_list_records').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){
+			var data = $.parseJSON(result);
+			if(data.result != '')
+			    $('#account_list_records').html(data.result);
+			if(data.pagination != '')
+			    $('#account_list_records_pagination').html(data.pagination);
+		}
+	});
+}
+// Get account amout for receipt
+function get_acc_amount(val)
+{
+	if(val != ''){
+		$.ajax({
+			url: 'model/accounts_model.php',
+			type:'POST',
+			data: 'action=get_account_amount_for_receipt&account_name='+val,
+			beforeSend: function(){
+				//$('#account_list_records').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success: function(result){
+					if(result != ''){
+						$('#amount').val(result);
+					}
+			}
+		});
+	}
+}
+</script>
+<script type="text/javascript">
+// American Numbering System
+var th = ['', 'thousand', 'million', 'billion', 'trillion'];
+
+var dg = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+
+var tn = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+
+var tw = ['twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+
+function toWords(s) {
+    s = s.toString();
+    s = s.replace(/[\, ]/g, '');
+    if (s != parseFloat(s)) return 'not a number';
+    var x = s.indexOf('.');
+    if (x == -1) x = s.length;
+    if (x > 15) return 'too big';
+    var n = s.split('');
+    var str = '';
+    var sk = 0;
+    for (var i = 0; i < x; i++) {
+        if ((x - i) % 3 == 2) {
+            if (n[i] == '1') {
+                str += tn[Number(n[i + 1])] + ' ';
+                i++;
+                sk = 1;
+            } else if (n[i] != 0) {
+                str += tw[n[i] - 2] + ' ';
+                sk = 1;
+            }
+        } else if (n[i] != 0) {
+            str += dg[n[i]] + ' ';
+            if ((x - i) % 3 == 0) str += 'hundred ';
+            sk = 1;
+        }
+        if ((x - i) % 3 == 1) {
+            if (sk) str += th[(x - i - 1) / 3] + ' ';
+            sk = 0;
+        }
+    }
+    if (x != s.length) {
+        var y = s.length;
+        str += ' dollars and ';
+        for (var i = x + 1; i < y; i++) {  if(dg[n[i]] == 'zero' && dg[n[(i + 1)]] == 'zero'){ str += ' Zero'; i = i + 1; } else str += dg[n[i]] + ' ' };
+		str += ' Cents'
+    }
+    return str.replace(/\s+/g, ' ');
+
+}
+
+
+/* ----------------------------------------------------------------------------------
+   **********************************************************************************
+   							       USERS MODULE
+   **********************************************************************************
+   ----------------------------------------------------------------------------------
+*/
+function add_new_user()
+{
+	$('#submit_form').trigger('click');
+}
+/* ----------------------------------------------------------------------------------
+   **********************************************************************************
+   							       Vehicles MODULE
+   **********************************************************************************
+   ----------------------------------------------------------------------------------
+*/
+
+// Ajax Pagination
+function vehicles_pagination(page)
+{
+	$.ajax({
+		url: 'model/vehicles_model.php',
+		type:'POST',
+		data: 'action=vehicles_ajax_pagination&page='+page,
+		beforeSend: function(){
+			$('#vechicle_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){
+			var data = $.parseJSON(result);
+			if(data.result != '')
+			    $('#vechicle_records_area').html(data.result);
+			if(data.pagination != '')
+			    $('#pagination_area_vehicle').html(data.pagination);
+		}
+	});
+}
+// Ajax calls for search...
+var s_v_name = '', s_v_number = '', v_type = '',vehicle_records = '', vehicle_records_pagination = '';
+function get_v_record_by_number(val)
+{
+	s_v_number = val;
+	get_vehicle_records();
+}
+function get_v_record_by_name(val)
+{
+	s_v_name = val;
+	get_vehicle_records();
+}
+function get_v_record_by_v_type(val)
+{
+	v_type = val;
+	get_vehicle_records();
+}
+
+// ajax call
+function get_vehicle_records()
+{
+	if(vehicle_records == '')
+	{
+	    vehicle_records = $('#vechicle_records_area').html();
+		vehicle_records_pagination = $('#pagination_area_vehicle').html();
+	}
+	if(s_v_name != '' || s_v_number != '' || v_type != '')
+	{   // s_v_name  s_v_number s_v_nationality
+		$.ajax({
+			url:"model/vehicles_model.php",
+			type:'POST',
+			data:'s_v_name='+s_v_name+'&s_v_number='+s_v_number+'&v_type='+v_type,
+			beforeSend: function(){
+				$('#pagination_area_vehicle').html('');
+				$('#vechicle_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){
+				var data = $.parseJSON(result);
+				if(data.result == '')
+					$('#vechicle_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{
+					$('#vechicle_records_area').html(data.result);
+					$('#pagination_area_vehicle').html(data.pagination);
+				}
+			}
+		});
+
+	}
+	else
+	{
+		if(vehicle_records != '')
+		{
+		 	// remove session data from search statement...
+				$.ajax({
+				url:"model/vehicles_model.php",
+				type:'POST',
+				data:'action=Remove_session_value_of_search_statement',
+				beforeSend: function(){
+					$('#pagination_area_vehicle').html('');
+					$('#vechicle_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+				},
+				success:function(result){
+					$('#vechicle_records_area').html(vehicle_records);
+					$('#pagination_area_vehicle').html(vehicle_records_pagination);
+				}
+			});
+
+
+
+		}
+	}
+}
+// Ajax Pagination vechicle card list
+function vehicles_card_pagination(page)
+{
+	$.ajax({
+		url: 'model/vehicles_model.php',
+		type:'POST',
+		data: 'action=vehicles_cardlist_ajax_pagination&page='+page,
+		beforeSend: function(){
+			$('#vechicle_card_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){
+			var data = $.parseJSON(result);
+			if(data.result != '')
+			    $('#vechicle_card_records_area').html(data.result);
+			if(data.pagination != '')
+			    $('#pagination_card_area_vehicle').html(data.pagination);
+		}
+	});
+}
+// Ajax calls for search...
+var s_v_cardlist_name = '', s_v_cardlist_from_date = '', v_cardlist_to_date = '',vehicle_cardlist_records = '', vehicle_cardlist_records_pagination = '';
+function get_v_card_record_by_from_date(val)
+{   
+	s_v_cardlist_from_date = val;
+	get_vehicle_cardlist_records();
+}
+function get_v_card_record_by_name(val)
+{
+	s_v_cardlist_name = val;
+	get_vehicle_cardlist_records();
+}
+function get_v_card_record_by_to_date(val)
+{
+	v_cardlist_to_date = val;
+	get_vehicle_cardlist_records();
+}
+
+// ajax call
+function get_vehicle_cardlist_records()
+{
+	if(vehicle_cardlist_records == '')
+	{
+	    vehicle_cardlist_records = $('#vechicle_card_records_area').html();
+		vehicle_cardlist_records_pagination = $('#pagination_card_area_vehicle').html();
+	}
+	if(s_v_cardlist_name != '' || (s_v_cardlist_from_date != '' && v_cardlist_to_date != ''))  
+	{   // s_v_name  s_v_number s_v_nationality 
+	
+		$.ajax({
+			url:"model/vehicles_model.php",
+			type:'POST',
+			data:'s_v_card_name='+s_v_cardlist_name+'&s_v_card_from_date='+s_v_cardlist_from_date+'&v_card_to_date='+v_cardlist_to_date,
+			beforeSend: function(){
+				$('#pagination_card_area_vehicle').html('');
+				$('#vechicle_card_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){
+				var data = $.parseJSON(result);
+				if(data.result == '')
+					$('#vechicle_card_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{
+					$('#vechicle_card_records_area').html(data.result);
+					$('#pagination_card_area_vehicle').html(data.pagination);
+				}
+			}
+		});
+
+	}
+	else
+	{
+		if(vehicle_cardlist_records != '')
+		{
+		 	// remove session data from search statement...
+				$.ajax({
+				url:"model/vehicles_model.php",
+				type:'POST',
+				data:'action=Remove_session_value_of_search_statement',
+				beforeSend: function(){
+					$('#pagination_card_area_vehicle').html('');
+					$('#vechicle_card_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+				},
+				success:function(result){
+					$('#vechicle_card_records_area').html(vehicle_cardlist_records);
+					$('#pagination_card_area_vehicle').html(vehicle_cardlist_records_pagination);
+				}
+			});
+
+
+
+		}
+	}
+}
+/* ----------------------------------------------------------------------------------
+   **********************************************************************************
+   							       Vehicles MODULE
+   **********************************************************************************
+   ----------------------------------------------------------------------------------
+*/
+
+var s_report_from_date = '', s_report_to_date = '';
+	  
+var vehicle_plate = '';
+function get_reports_by_date(val)
+{
+	s_report_from_date = val;
+	//get_reports_records();
+}
+function get_reports_to_date(val)
+{
+	s_report_to_date = val;
+	//get_reports_records();
+}
+function get_reports_vehicle_plate(val)
+{
+	vehicle_plate = val;
+	//get_reports_records();
+}
+// ajax call
+
+function get_reports_records()
+{
+   
+	if(s_report_from_date != '' && s_report_to_date != '')
+	{   // s_v_name  s_v_number s_v_nationality
+		$('.table .glyphicon').hide();
+		// Daily report
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=daily_report&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading Daily Report,.....');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.result_daily_report == '')
+					$('#daily_report_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#daily_report_area').html(data.result_daily_report);
+					//$('#daily_report_sum').html(data.daily_report_sum);
+					$('#daily_report_period').html(data.top_details);
+					$('#daily_report_print_icon').show();
+					$('#show_error_msg').hide().html('');  
+					
+				}
+			}
+		});
+		// Receipt by Date report
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=receipt_by_day_report&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading Report,.....');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.result_daily_report == '')
+					$('#daily_report_by_day_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#daily_report_by_day_area').html(data.result_by_date_report);
+					//$('#daily_report_sum').html(data.daily_report_sum);
+					$('#daily_report_by_date_period').html(data.top_details);
+					$('#daily_report_by_day_print_icon').show();
+					$('#show_error_msg').hide().html('');  
+					
+				}
+			}
+		});
+		// monthly report
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=monthly_report&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading Monthly Report,.....');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.monthly_report == '')
+					$('#monthly_report_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#monthly_report_area').html(data.monthly_report);
+					
+				}
+				$('#monthly_report_tab_top_details').html(data.top_details);
+				$('#monthly_report_print_icon').show(); 
+				$('#show_error_msg').hide().html('');
+			}
+		});
+		
+		//     
+		// licence summary report
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=licence_summary&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading  Report, Please Wait ....');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.licence_report == '')
+					$('#licence_summary_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#licence_summary_area').html(data.licence_report);
+					
+				}
+				$('#licence_summary_tab_top_details').html(data.top_details);
+				$('#licence_summry_print_icon').show();
+				$('#show_error_msg').hide().html('');
+			}
+		});
+		// licence detail
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=licence_detail&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading  Report, Please Wait ....');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.licence_report == '')
+					$('#licence_detail_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#licence_detail_area').html(data.licence_report);
+					
+				}
+				$('#licence_detail_tab_top_details').html(data.top_details);
+				$('#licence_report_print_icon').show();
+				$('#show_error_msg').hide().html('');
+			}
+		});
+		// moto summary report
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=moto_summary&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading  Report, Please Wait ....');				//$('#vechicle_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.moto_report == '')
+					$('#moto_summary_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#moto_summary_area').html(data.moto_report);
+					
+				}
+				$('#moto_summary_tab_top_details').html(data.top_details);
+				$('#moto_sum_report_print_icon').show();
+				$('#show_error_msg').hide().html('');
+			}
+		});
+		// Moto detail        
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=moto_detail&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading  Report, Please Wait ....');
+				//$('#vechicle_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.moto_report == '')
+					$('#moto_detail_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#moto_detail_area').html(data.moto_report);
+					
+				}
+				$('#moto_detail_tab_top_details').html(data.top_details);
+				$('#moto_report_print_icon').show();
+				$('#show_error_msg').hide().html('');
+			}
+		});
+		//--------------------        
+		// vehicle summary report
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=vehicle_summary&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading  Report, Please Wait ....');
+				//$('#vechicle_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.vehicle_report == '')
+					$('#vehicle_summary_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#vehicle_summary_area').html(data.vehicle_report);
+					
+				}
+				$('#vehicle_summary_tab_top_details').html(data.top_details);
+				$('#vehicle_sum_report_print_icon').show();
+				$('#show_error_msg').hide().html('');
+			}
+		});
+		// Moto detail
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=vehicle_detail&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading  Report, Please Wait ....');
+				//$('#vechicle_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.vehicle_report == '')
+					$('#vehicle_detail_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#vehicle_detail_area').html(data.vehicle_report);
+					
+				}
+				$('#vehicle_detail_tab_top_details').html(data.top_details);
+				$('#vehicle_report_print_icon').show();
+				$('#show_error_msg').hide().html('');
+			}
+		});
+		//  Receipt Report with account names
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=receipt_report_account_names&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading Receipt Report with account names,.....');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.result_daily_report == '')
+					$('#receipt_detail_with_account_name_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#receipt_detail_with_account_name_area').html(data.result);
+					//$('#daily_report_sum').html(data.daily_report_sum);
+					$('#receipt_detail_with_account_name #report_period').html(data.top_details);
+					$('#receipt_details_account_names_icon').show();
+					$('#show_error_msg').hide().html('');  
+					
+				}
+			}
+		});
+		//  Receipts grouped by account names
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=receipt_detail_grouped_account_name&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading Receipt Report  grouped by account names,.....');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.result_daily_report == '')
+					$('#receipt_detail_grouped_account_name_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#receipt_detail_grouped_account_name_area').html(data.result);
+					//$('#daily_report_sum').html(data.daily_report_sum);
+					$('#receipt_detail_grouped_account_name #report_period').html(data.top_details);
+					$('#receipt_details_group_account_names_icon').show();
+					$('#show_error_msg').hide().html('');  
+					
+				}
+			}
+		});
+		//  Receipts summary by account names
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=receipt_details_summry_account_names&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading Receipt Report  grouped by account names,.....');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.result_daily_report == '')
+					$('#receipt_detail_grouped_account_name_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#receipt_details_summry_account_names_area').html(data.result);
+					//$('#daily_report_sum').html(data.daily_report_sum);
+					$('#receipt_details_summry_account_names #report_period').html(data.top_details);
+					$('#receipt_details_summry_account_names_icon').show();
+					$('#show_error_msg').hide().html('');  
+					
+				}
+			}
+		});
+		// Receipts Summary by each day
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=receipt_summary_day&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading Report,.....');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.result_daily_report == '')
+					$('#receipt_summary_day_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#receipt_summary_day_area').html(data.result);
+					//$('#daily_report_sum').html(data.daily_report_sum);
+					$('#receipt_summary_day #report_period').html(data.top_details);
+					$('#receipt_summary_day_icon').show();
+					$('#show_error_msg').hide().html('');  
+					
+				}
+			}
+		});
+		// Receipts Summary by Main accounts
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=receipt_summary_main_accounts&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading Report,.....');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.result == '')
+					$('#receipt_summary_main_accounts_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#receipt_summary_main_accounts_area').html(data.result);
+					//$('#daily_report_sum').html(data.daily_report_sum);
+					$('#receipt_summary_main_accounts #report_period').html(data.top_details);
+					$('#receipt_summary_main_accounts_icon').show();
+					$('#show_error_msg').hide().html('');  
+					
+				}
+			}
+		});
+		//Receipts summary by months
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=receipt_report_summary_month&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading Monthly Report,.....');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.result == '')
+					$('#receipt_report_summary_month_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#receipt_report_summary_month_area').html(data.result);
+					
+				}
+				$('#receipt_report_summary_month #report_period').html(data.top_details);
+				$('#receipt_report_summary_month_icon').show(); 
+				$('#show_error_msg').hide().html('');
+			}
+		});
+		// Receipts summary by main accounts and subaccounts
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=receipt_summary_main_sub_accounts&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date,
+			beforeSend: function(){
+				$('#show_error_msg').show().html('Loading Report,.....');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.result == '')
+					$('#receipt_summary_main_sub_accounts_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#receipt_summary_main_sub_accounts_area').html(data.result);
+					//$('#daily_report_sum').html(data.daily_report_sum);
+					$('#receipt_summary_main_sub_accounts #report_period').html(data.top_details);
+					$('#receipt_summary_main_sub_accounts_icon').show();
+					$('#show_error_msg').hide().html('');  
+					
+				}
+			}
+		});
+		// tax report  
+		/*$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=vehicle_tax_report&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date+'&vehicle_no='+vehicle_plate,
+			beforeSend: function(){
+				//$('#pagination_area_vehicle').html('');
+				//$('#vechicle_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){ 
+				var data = $.parseJSON(result);
+				if(data.v_tax_result == '')
+					$('#vehicle_tax_report_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{  
+					$('#vehicle_tax_report_area').html(data.v_tax_result);
+					$('#vehicle_tax_report_top_details').html(data.v_tax__top_details);
+					
+				}
+			}
+		});
+		// road tax no renewed report
+		$.ajax({
+			url:"model/reports_model.php",
+			type:'POST',
+			data:'action=road_tax_report&s_report_from_date='+s_report_from_date+'&s_report_to_date='+s_report_to_date+'&vehicle_no='+vehicle_plate,
+			beforeSend: function(){
+				//$('#pagination_area_vehicle').html('');
+				//$('#vechicle_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){  
+				var data = $.parseJSON(result);  
+				if(data.road_tax_result == '')
+					$('#road_tax_report_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{   
+					$('#road_tax_report_area').html(data.road_tax_result);
+					$('#road_tax_report_top_area').html(data.road_tax_result_top_details);
+					
+				}
+			}
+		});*/
+
+	}
+	else
+	{
+		$('#show_error_msg').show().html('Please Enter Dates.');
+		$('.from_date').focus();
+	}
+
+}
+
+	
+	   
+
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+// Ajax Pagination
+function licence_pagination(page)
+{
+	$.ajax({
+		url: 'model/licence_model.php',
+		type:'POST',
+		data: 'action=licence_ajax_pagination&page='+page,
+		beforeSend: function(){
+			$('#licence_record_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){
+			var data = $.parseJSON(result);
+			if(data.result != '')
+			    $('#licence_record_area').html(data.result);
+			if(data.pagination != '')
+			    $('#licence_pagination_area').html(data.pagination);
+		}
+	});
+}   
+// Ajax calls for search licence...
+var s_l_name = '', s_licence_no = '', s_l_nationality = '', licence_records = '', licence_records_pagination = '';
+function get_l_record_by_no(val)
+{
+	s_licence_no = val;
+	get_licence_records();
+}
+function get_l_record_by_name(val)
+{
+	s_l_name = val;
+	get_licence_records();
+}
+function get_l_record_by_nationality(val)
+{
+	s_l_nationality = val;
+	get_licence_records();
+}
+
+// ajax call
+function get_licence_records()
+{
+	if(licence_records == '')  
+	{
+	    licence_records = $('#licence_record_area').html();
+		licence_records_pagination = $('#licence_pagination_area').html();
+	}
+	if(s_licence_no != '' || s_l_name != '' || s_l_nationality != '')
+	{   // s_licence_no  s_l_name s_l_nationality
+		$.ajax({
+			url:"model/licence_model.php",
+			type:'POST',
+			data:'s_licence_no='+s_licence_no+'&s_l_name='+s_l_name+'&s_l_nationality='+s_l_nationality,
+			beforeSend: function(){
+				$('#licence_pagination_area').html('');
+				$('#licence_record_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){
+				var data = $.parseJSON(result);
+				if(data.result == '')
+					$('#licence_record_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{
+					$('#licence_record_area').html(data.result);
+					$('#licence_pagination_area').html(data.pagination);
+				}
+			}
+		});
+
+	}
+	else
+	{
+		if(licence_records != '')
+		{
+		 	// remove session data from search statement...
+				$.ajax({
+				url:"model/licence_model.php",
+				type:'POST',
+				data:'action=Remove_session_value_of_search_statement',
+				beforeSend: function(){
+					$('#licence_pagination_area').html('');
+					$('#licence_record_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+				},
+				success:function(result){
+					$('#licence_record_area').html(licence_records);
+					$('#licence_pagination_area').html(licence_records_pagination);
+				}
+			});
+
+
+
+		}
+	}
+}
+
+
+// Ajax Pagination for licence card list
+function licence_card_pagination(page)
+{  
+	$.ajax({
+		url: 'model/licence_model.php',
+		type:'POST',
+		data: 'action=licence_ajax_pagination_card&page='+page,
+		beforeSend: function(){
+			$('#licence_card_record_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){ 
+			var data = $.parseJSON(result); 
+			if(data.result != '')
+			    $('#licence_card_record_area').html(data.result);
+			if(data.pagination != '')
+			    $('#licence_card_pagination_area').html(data.pagination);
+		}
+	});
+} 
+// Ajax calls for search licence card list...
+var l_from_date = '', l_to_date = '', licence_card_records = '', licence_card_records_pagination = '';
+function get_l_record_by_from_date(val)
+{
+	l_from_date = val;
+	get_licence_card_records();
+}
+function get_l_record_by_to_date(val)
+{
+	l_to_date = val;
+	get_licence_card_records();
+}
+
+// ajax call
+function get_licence_card_records()
+{
+	if(licence_card_records == '')   
+	{
+	    licence_card_records = $('#licence_card_record_area').html();
+		licence_card_records_pagination = $('#licence_card_pagination_area').html();
+	}
+	if(l_from_date != '' && l_to_date != '')
+	{   // l_from_date  l_to_date
+		$.ajax({
+
+			url:"model/licence_model.php",
+			type:'POST',
+			data:'l_from_date='+l_from_date+'&l_to_date='+l_to_date,
+			beforeSend: function(){
+				$('#licence_card_pagination_area').html('');
+				$('#licence_card_record_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){
+				var data = $.parseJSON(result);
+				if(data.result == '')
+					$('#licence_card_record_area').html('<tr><td colspan="10" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{
+					$('#licence_card_record_area').html(data.result);
+					$('#licence_card_pagination_area').html(data.pagination);
+				}
+			}
+		});
+
+	}
+	else
+	{    
+		if(licence_card_records != '')
+		{
+		 	// remove session data from search statement...
+				$.ajax({
+				url:"model/licence_model.php",
+				type:'POST',
+				data:'action=Remove_session_value_of_search_statement_card',
+				beforeSend: function(){
+					$('#licence_pagination_area').html('');
+					$('#licence_record_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+				},
+				success:function(result){
+					$('#licence_card_record_area').html(licence_card_records);
+					$('#licence_card_pagination_area').html(licence_card_records_pagination);
+				}
+			});
+
+
+
+		}
+	}
+}
+ function submit_card_licence_form()
+ {
+	 $('#sub_btn_add_licence_card').trigger('click');
+ }
+ 
+ // Ajax Pagination for licence renewal list     
+function licence_renewal_pagination(page)
+{  
+	$.ajax({
+		url: 'model/licence_renewal_model.php',
+		type:'POST',
+		data: 'action=licence_ajax_pagination_renewal_list&page='+page,
+		beforeSend: function(){
+			$('#licence_renewal_data_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			$('#licence_renew_success_msg').html('').hide();
+			$('#licence_renew_error_msg').html('').hide();				
+		},
+		success: function(result){ 
+			var data = $.parseJSON(result); 
+			if(data.result != '')
+			    $('#licence_renewal_data_area').html(data.result);
+			if(data.pagination != '')
+			    $('#licence_renewal_pagination_area').html(data.pagination);
+		}
+	});
+} 
+// 
+function get_latest_licence_renewal_record()
+{   
+	var Licene_no = $('#licence_renewal_licence_no').val(); 
+	if(Licene_no != '')
+	{
+		$.ajax({
+			url: 'model/licence_renewal_model.php',
+			type:'POST',
+			data: 'action=latest_date_for_licence_renewal&licence_no='+Licene_no,
+			beforeSend: function(){
+				$('#licence_renewal_data_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+				//$('#licence_renew_success_msg').html('').hide();
+				//$('#licence_renew_error_msg').html('').hide();
+			},
+			success: function(result){ 
+				var data = $.parseJSON(result); 
+				if(data.result != '')
+					$('#licence_renewal_data_area').html(data.result);
+				if(data.pagination != '')
+					$('#licence_renewal_pagination_area').html(data.pagination);
+			}
+		});
+	}
+	else
+	  $('#licence_renew_error_msg').show().text('ERROR !  Some thing wrong, please refersh page.');
+}
+function licence_renewal_delete_record(recordID)
+{  
+	var is_confirm = confirm('Are your sure to delete this record ?');
+	if(is_confirm)
+	{
+		$.ajax({
+			url: 'model/licence_renewal_model.php',
+			type:'POST',
+			data: 'action=licence_renewal_delete_record&recordID='+recordID,
+			beforeSend: function(){
+				$('#licence_renew_success_msg').html('').hide();
+				$('#licence_renew_error_msg').html('').hide();				
+			},
+			success: function(result){ 
+				if(result == 'yes')
+				{
+					$('#licence_renew_success_msg').show().text('Record deleted successfully.');
+					get_latest_licence_renewal_record();
+				}
+				else 
+				{
+					$('#licence_renew_error_msg').show().text('ERROR !  Some thing wrong, please try again.');
+					
+				}
+			}
+		});
+	}
+} 
+function get_receipt_data(receipt_no)
+{   
+	if(receipt_no != '')
+	{
+		$.ajax({
+			url: 'model/licence_model.php',
+			type:'POST',
+			data: 'action=licence_get_receipt_data&receipt_no='+receipt_no,
+			beforeSend: function(){
+					$('#show_error_msg').hide().text('Please wait ...');		
+			},
+			success: function(result){ 
+				var data = $.parseJSON(result);   
+				if(data.result == 'yes')
+				{   
+				    $('.licence_receipt_fee').val(data.fees);
+					$('.licence_receipt_holder_name').val(data.holder_name);
+					$('.licence_receipt_issueDate').val(data.issue_date);
+					$('.expire_date').val(data.expire_date);
+					$('#show_error_msg').hide().text('');
+				}
+				else 
+				{
+					$('#show_error_msg').show().text('ERROR !  Receipt number not exists.');
+					$('.licence_receipt_fee').val('');
+					$('.licence_receipt_holder_name').val('');
+					$('.licence_receipt_issueDate').val('');
+					$('.expire_date').val('');
+					
+				}
+			}
+		});
+	}
+	
+}
+function get_receipt_data_licence_renew(receipt_no)
+{   
+	if(receipt_no != '')
+	{
+		$.ajax({
+			url: 'model/licence_model.php',
+			type:'POST',
+			data: 'action=licence_get_receipt_data&receipt_no='+receipt_no,
+			beforeSend: function(){
+				$('#licence_renew_success_msg').show().text('Please Wait.....');			
+			},
+			success: function(result){ 
+				var data = $.parseJSON(result);   
+				if(data.result == 'yes')
+				{         
+				    $('.licence_renew_fee').val(data.fees);
+					//$('.licence_receipt_holder_name').val(data.holder_name);
+					$('.licence_renew_issue_date').val(data.issue_date);
+					$('.licence_renew_expire_date').val(data.expire_date);
+					$('#licence_renew_error_msg').hide().text('');
+					$('#licence_renew_success_msg').show().text('');
+				}
+				else 
+				{
+					$('#licence_renew_error_msg').show().text('ERROR !  Receipt number not exists.');
+					$('.licence_renew_fee').val('');
+					//$('.licence_receipt_holder_name').val('');
+					$('.licence_renew_issue_date').val('');
+					$('.licence_renew_expire_date').val('');
+					$('#licence_renew_success_msg').show().text('');
+					
+				}
+			}
+		});
+	}
+	
+}
+
+// Ajax calls for search for vehicle card...
+var s_v_card_from_date = '', s_v_card_to_date = '',vehicle_card_records = '', vehicle_card_records_pagination = '';
+function get_v_card_record_from_date(val)
+{
+	s_v_card_from_date = val;
+	get_vehicle_card_records();
+}
+function get_v_card_record_to_date(val)
+{
+	s_v_card_to_date = val;
+	get_vehicle_card_records();
+}
+
+
+// ajax call
+function get_vehicle_card_records()
+{
+	if(vehicle_card_records == '')
+	{
+	    vehicle_card_records = $('#vechicle_records_area').html();
+		vehicle_card_records_pagination = $('#pagination_area_vehicle').html();
+	}
+	if(s_v_card_from_date != '' && s_v_card_to_date != '' )
+	{   // s_v_card_from_date  s_v_card_to_date
+		$.ajax({
+			url:"model/vehicles_transfer_model.php",
+			type:'POST',
+			data:'s_v_card_from_date='+s_v_card_from_date+'&s_v_card_to_date='+s_v_card_to_date,
+			beforeSend: function(){
+				$('#pagination_area_vehicle').html('');
+				$('#vechicle_records_area').html('<tr><td colspan="12" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){
+				var data = $.parseJSON(result);  
+				if(data.result == '')
+					$('#vechicle_records_area').html('<tr><td colspan="12" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{
+					$('#vechicle_records_area').html(data.result);
+					$('#pagination_area_vehicle').html(data.pagination);
+					 
+				}
+			}
+		});
+
+	}
+	else
+	{
+		if(vehicle_card_records != '')
+		{
+		 	// remove session data from search statement...
+				$.ajax({
+				url:"model/vehicles_model.php",
+				type:'POST',
+				data:'action=Remove_session_value_of_search_statement',
+				beforeSend: function(){
+					$('#pagination_area_vehicle').html('');
+					$('#vechicle_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+				},
+				success:function(result){
+					$('#vechicle_records_area').html(vehicle_card_records);
+					$('#pagination_area_vehicle').html(vehicle_card_records_pagination);
+				}
+			});
+
+
+
+		}
+	}
+}
+
+// Vehicle REnewal
+// 
+function get_latest_vehicle_renewal_record()
+{   
+	var plate_no = $('#vehicle_renewal_plate_no').val(); 
+	if(plate_no != '')
+	{
+		$.ajax({
+			url: 'model/vehicle_renewal_model.php',
+			type:'POST',
+			data: 'action=latest_date_for_vehicle_renewal&plate_no='+plate_no,
+			beforeSend: function(){
+				$('#vehicle_renewal_data_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+				//$('#licence_renew_success_msg').html('').hide();
+				//$('#licence_renew_error_msg').html('').hide();
+			},
+			success: function(result){ 
+				var data = $.parseJSON(result); 
+				if(data.result != '')
+					$('#vehicle_renewal_data_area').html(data.result);
+				if(data.pagination != '')
+					$('#licence_renewal_pagination_area').html(data.pagination);
+			}
+		});
+	}
+	else
+	  $('#licence_renew_error_msg').show().text('ERROR !  Some thing wrong, please refersh page.');
+}
+// Ajax Pagination for vehicle renewal list     
+function vehicle_renewal_pagination(page)
+{  
+	$.ajax({
+		url: 'model/vehicle_renewal_model.php',
+		type:'POST',
+		data: 'action=licence_ajax_pagination_renewal_list&page='+page,
+		beforeSend: function(){
+			$('#vehicle_renewal_data_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+			$('#licence_renew_success_msg').html('').hide();
+			$('#licence_renew_error_msg').html('').hide();				
+		},
+		success: function(result){ 
+			var data = $.parseJSON(result); 
+			if(data.result != '')
+			    $('#vehicle_renewal_data_area').html(data.result);
+			if(data.pagination != '')
+			    $('#licence_renewal_pagination_area').html(data.pagination);
+		}
+	});
+} 
+function vehicle_renewal_delete_record(recordID)
+{  
+	var is_confirm = confirm('Are your sure to delete this record ?');
+	if(is_confirm)
+	{
+		$.ajax({
+			url: 'model/vehicle_renewal_model.php',
+			type:'POST',
+			data: 'action=veh_renewal_delete_record&recordID='+recordID,
+			beforeSend: function(){
+				$('#licence_renew_success_msg').html('').hide();
+				$('#licence_renew_error_msg').html('').hide();				
+			},
+			success: function(result){ 
+				if(result == 'yes')
+				{
+					$('#licence_renew_success_msg').show().text('Record deleted successfully.');
+					get_latest_vehicle_renewal_record();
+				}
+				else 
+				{
+					$('#licence_renew_error_msg').show().text('ERROR !  Some thing wrong, please try again.');
+					
+				}
+			}
+		});
+	}
+} 
+/* ----------------------------------------------------------------------------------
+   **********************************************************************************
+   							       Fine MODULE
+   **********************************************************************************
+   ----------------------------------------------------------------------------------
+*/
+// Ajax Pagination
+function fine_pagination(page)
+{
+	$.ajax({
+		url: 'model/fine_model.php',
+		type:'POST',
+		data: 'action=fine_ajax_pagination&page='+page,
+		beforeSend: function(){
+			$('#fine_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){
+			var data = $.parseJSON(result);
+			if(data.result != '')
+			    $('#fine_records_area').html(data.result);
+			if(data.pagination != '')
+			    $('#pagination_area').html(data.pagination);
+		}
+	});
+}
+
+// Ajax calls for search for fine...
+var s_fine_by_fine_no = '', s_fine_plate_no = '', s_fine_licence_no = '', fine_records = '', fine_records_pagination = '';
+function get_fine_data_by_fine_no(val)
+{ 
+	s_fine_by_fine_no = val;
+	get_traffic_fine_data();
+}
+function get_fine_data_by_plate_no(val)
+{
+	s_fine_plate_no = val;
+	get_traffic_fine_data();
+}
+function get_fine_data_by_licence_no(val)
+{
+	s_fine_licence_no = val;
+	get_traffic_fine_data();
+}
+
+// ajax call
+function get_traffic_fine_data()
+{
+	if(fine_records == '')
+	{
+	    fine_records = $('#fine_records_area').html();
+		fine_records_pagination = $('#pagination_area').html();
+	}
+	if(s_fine_by_fine_no != '' || s_fine_plate_no != '' || s_fine_licence_no != '')
+	{   // s_fine_by_fine_no  s_fine_plate_no  s_fine_licence_no
+		$.ajax({
+			url:"model/fine_model.php",
+			type:'POST',
+			data:'s_fine_by_fine_no='+s_fine_by_fine_no+'&s_fine_plate_no='+s_fine_plate_no+'&s_fine_licence_no='+s_fine_licence_no,
+			beforeSend: function(){
+				$('#pagination_area').html('');
+				$('#fine_records_area').html('<tr><td colspan="12" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){
+				var data = $.parseJSON(result);  
+				if(data.result == '')
+					$('#fine_records_area').html('<tr><td colspan="12" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{
+					$('#fine_records_area').html(data.result);
+					$('#pagination_area').html(data.pagination);
+					 
+				}
+			}
+		});
+
+	}
+	else
+	{
+		if(fine_records != '')
+		{
+		 	// remove session data from search statement...
+				$.ajax({
+				url:"model/vehicles_model.php",
+				type:'POST',
+				data:'action=Remove_session_value_of_search_statement',
+				beforeSend: function(){
+					$('#pagination_area').html('');
+					$('#fine_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+				},
+				success:function(result){
+					$('#fine_records_area').html(fine_records);
+					$('#pagination_area').html(fine_records_pagination);
+				}
+			});
+
+
+
+		}
+	}
+}
+// Ajax Pagination
+function fine_master_pagination(page)
+{
+	$.ajax({
+		url: 'model/fine_model.php',
+		type:'POST',
+		data: 'action=master_fine_ajax_pagination&page='+page,
+		beforeSend: function(){
+			$('#master_fine_records_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){
+			var data = $.parseJSON(result);
+			if(data.result != '')
+			    $('#master_fine_records_area').html(data.result);
+			if(data.pagination != '')
+			    $('#master_pagination_area').html(data.pagination);
+		}
+	});
+}
+
+//// Ajax Pagination
+function fine_pay_pagination(page)
+{
+	$.ajax({
+		url: 'model/fine_model.php',
+		type:'POST',
+		data: 'action=fine_pay_ajax_pagination&page='+page,
+		beforeSend: function(){
+			$('#fine_pay_detail_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){
+			var data = $.parseJSON(result);
+			if(data.result != '')
+			    $('#fine_pay_detail_area').html(data.result);
+			if(data.pagination != '')
+			    $('#fine_pay_pagination_area').html(data.pagination);
+		}
+	});
+}
+// Ajax calls for search for fine pay section...
+var s_fine_pay_by_fine_no = '', s_fine_pay_plate_no = '', s_fine_pay_licence_no = '', fine_pay_records = '', fine_pay_records_pagination = '';
+function get_fine_pay_data_by_fine_no(val)
+{ 
+	s_fine_pay_by_fine_no = val;
+	get_traffic_fine_pay_data();
+}
+function get_fine_pay_data_by_plate_no(val)
+{
+	s_fine_pay_plate_no = val;
+	get_traffic_fine_pay_data();
+}
+function get_fine_pay_data_by_licence_no(val)
+{
+	s_fine_pay_licence_no = val;
+	get_traffic_fine_pay_data();
+}
+
+// ajax call   fine_pay_detail_area  fine_pay_pagination_area
+function get_traffic_fine_pay_data()
+{
+	if(fine_pay_records == '')
+	{
+	    fine_pay_records = $('#fine_pay_detail_area').html();
+		fine_pay_records_pagination = $('#fine_pay_pagination_area').html();
+	} 
+	if(s_fine_pay_by_fine_no != '' || s_fine_pay_plate_no != '' || s_fine_pay_licence_no != '')
+	{   // s_fine_pay_by_fine_no  s_fine_pay_plate_no  s_fine_pay_licence_no
+		$.ajax({
+			url:"model/fine_model.php",
+			type:'POST',
+			data:'s_fine_pay_by_fine_no='+s_fine_pay_by_fine_no+'&s_fine_pay_plate_no='+s_fine_pay_plate_no+'&s_fine_pay_licence_no='+s_fine_pay_licence_no,
+			beforeSend: function(){
+				$('#fine_pay_pagination_area').html('');
+				$('#fine_pay_detail_area').html('<tr><td colspan="12" align="center" style="color:red;"> Loading..........</td></tr>');
+			},
+			success:function(result){
+				var data = $.parseJSON(result);  
+				if(data.result == '')
+					$('#fine_records_area').html('<tr><td colspan="12" align="center" style="color:red;"> No record found</td></tr>');
+				else
+				{
+					$('#fine_pay_detail_area').html(data.result);
+					$('#fine_pay_pagination_area').html(data.pagination);
+					 
+				}
+			}
+		});
+
+	}
+	else
+	{
+		if(fine_pay_records != '')
+		{
+		 	// remove session data from search statement...
+				$.ajax({
+				url:"model/vehicles_model.php",
+				type:'POST',
+				data:'action=Remove_session_value_of_search_statement',
+				beforeSend: function(){
+					$('#fine_pay_pagination_area').html('');
+					$('#fine_pay_detail_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+				},
+				success:function(result){
+					$('#fine_pay_detail_area').html(fine_pay_records);
+					$('#fine_pay_pagination_area').html(fine_pay_records_pagination);
+				}
+			});
+
+
+
+		}
+	}
+}
+
+// -------------------------------------------------
+
+// Users Master section
+// Ajax Pagination
+function user_master_v_type_pag(page)
+{  
+	$.ajax({
+		url: 'model/master_model.php',
+		type:'POST',
+		data: 'action=user_master_v_type_ajax_pagination&page='+page,
+		beforeSend: function(){
+			$('#u_m_v_type_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){ 
+			var data = $.parseJSON(result); 
+			if(data.result != '')
+			    $('#u_m_v_type_area').html(data.result);
+			if(data.pagination != '')
+			    $('#users_master_v_type_pagination').html(data.pagination);
+		}
+	});
+} 
+function  user_master_v_origin_pag(page)
+{  
+	$.ajax({
+		url: 'model/master_model.php',
+		type:'POST',
+		data: 'action=user_master_v_origin_ajax_pagination&page='+page,
+		beforeSend: function(){
+			$('#u_m_v_origin_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){ 
+			var data = $.parseJSON(result); 
+			if(data.result != '')
+			    $('#u_m_v_origin_area').html(data.result);
+			if(data.pagination != '')
+			    $('#users_master_v_origin_pagination').html(data.pagination);
+		}
+	});
+} 
+function  user_master_plate_type_pag(page)
+{  
+	$.ajax({
+		url: 'model/master_model.php',
+		type:'POST',
+		data: 'action=user_master_p_type_ajax_pagination&page='+page,
+		beforeSend: function(){
+			$('#u_m_p_type_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){ 
+			var data = $.parseJSON(result); 
+			if(data.result != '')
+			    $('#u_m_p_type_area').html(data.result);
+			if(data.pagination != '')
+			    $('#users_master_p_type_pagination').html(data.pagination);
+		}
+	});
+} 
+
+function  user_master_p_code_pag(page)
+{  
+	$.ajax({
+		url: 'model/master_model.php',
+		type:'POST',
+		data: 'action=user_master_p_code_ajax_pagination&page='+page,
+		beforeSend: function(){
+			$('#u_m_p_code_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){ 
+			var data = $.parseJSON(result); 
+			if(data.result != '')
+			    $('#u_m_p_code_area').html(data.result);
+			if(data.pagination != '')
+			    $('#users_master_p_code_pagination').html(data.pagination);
+		}
+	});
+} 
+
+function  user_master_nationality_pag(page)
+{  
+	$.ajax({
+		url: 'model/master_model.php',
+		type:'POST',
+		data: 'action=user_master_nationality_ajax_pagination&page='+page,
+		beforeSend: function(){
+			$('#u_m_nationality_area').html('<tr><td colspan="10" align="center" style="color:red;"> Loading..........</td></tr>');
+		},
+		success: function(result){ 
+			var data = $.parseJSON(result); 
+			if(data.result != '')
+			    $('#u_m_nationality_area').html(data.result);
+			if(data.pagination != '')
+			    $('#users_master_nationality_pagination').html(data.pagination);
+		}
+	});
+} 
+
+ </script>
+
+
+  
+
+</body></html>

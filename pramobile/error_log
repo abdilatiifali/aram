@@ -1,0 +1,17 @@
+[07-Apr-2017 10:53:40 UTC] PHP Notice:  Undefined index: updated_time in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/update_vehicle.php on line 68
+[07-Apr-2017 10:53:41 UTC] PHP Notice:  Undefined index: id in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/update_vehicle.php on line 68
+[07-Apr-2017 10:53:41 UTC] PHP Notice:  Undefined index: updated_time in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/update_vehicle.php on line 68
+[07-Apr-2017 10:53:41 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/update_vehicle.php on line 22
+[07-Apr-2017 13:23:53 UTC] PHP Notice:  Undefined index: id in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/update_driver.php on line 70
+[07-Apr-2017 13:23:53 UTC] PHP Notice:  Undefined index: updated_time in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/update_driver.php on line 70
+[07-Apr-2017 13:23:53 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/update_driver.php on line 22
+[09-Apr-2017 09:34:03 UTC] PHP Notice:  Undefined index: id in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/count.php on line 40
+[09-Apr-2017 09:34:03 UTC] PHP Notice:  Undefined index: vTime in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/count.php on line 40
+[09-Apr-2017 09:34:03 UTC] PHP Notice:  Undefined index: did in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/count.php on line 40
+[09-Apr-2017 09:34:03 UTC] PHP Notice:  Undefined index: dTime in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/count.php on line 40
+[09-Apr-2017 09:34:03 UTC] PHP Notice:  Undefined index: uid in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/count.php on line 40
+[09-Apr-2017 09:34:03 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/count.php on line 19
+[09-Apr-2017 09:34:03 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/count.php on line 23
+[09-Apr-2017 09:34:03 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/count.php on line 28
+[09-Apr-2017 09:34:03 UTC] PHP Notice:  Undefined index: id in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/update_user.php on line 56
+[09-Apr-2017 09:34:03 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/latif1958/public_html/www.gaadiidka.in/PRA/pramobile/update_user.php on line 22
